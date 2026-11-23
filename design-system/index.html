@@ -1,0 +1,350 @@
+<title>Clínica Comed Identidade e Copy</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Cormorant+Garamond:wght@300;400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: documento editorial em faixas bege, grandes títulos serifados, cartões arredondados, um único acento quente (Pulso) usado só em batimento, links e CTA secundário. */
+:root{
+  --areia:#F3E7DC;      /* fundo da página */
+  --linho:#FAF4ED;      /* cartões */
+  --cafe:#7A5C49;       /* cor de marca, CTA primário */
+  --grao:#3F2E25;       /* texto */
+  --taupe:#B39C8B;      /* logo, linhas, decoração */
+  --pulso:#B4492F;      /* acento: batimento, destaques */
+  --salvia:#5B6B4E;     /* apoio: confirmação, selos de confiança */
+  --pessego:#E9B8A3;    /* faixa escura: realce */
+  --escuro:#3F2E25;
+  --f-display:'Fraunces',Georgia,serif;
+  --f-logo:'Cormorant Garamond',Georgia,serif;
+  --f-body:'DM Sans',system-ui,sans-serif;
+  --r-card:28px; --r-pill:999px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--areia);color:var(--grao);font:400 17px/1.6 var(--f-body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));}
+.wrap{max-width:1080px;margin:0 auto}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;line-height:1.08;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(2.4rem,7vw,4.4rem)}
+h2{font-size:clamp(1.9rem,4.6vw,3rem)}
+h3{font-size:1.35rem;line-height:1.2}
+p{margin:0;max-width:65ch}
+a{color:var(--pulso)}
+:focus-visible{outline:3px solid var(--pulso);outline-offset:3px;border-radius:6px}
+.eyebrow{font:700 .75rem/1 var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--cafe)}
+.muted{color:#6B5546}
+section{padding-block:72px}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(243,231,220,.92);backdrop-filter:blur(8px);margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px));border-bottom:1px solid #E3D2C3}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--areia);z-index:30}
+.nav .wrap{display:flex;gap:6px 20px;flex-wrap:wrap;align-items:center;padding-block:12px;font-size:.9rem}
+.nav a{color:var(--grao);text-decoration:none;padding:4px 2px}
+.nav a:hover{color:var(--pulso)}
+.nav strong{font-family:var(--f-logo);font-size:1.25rem;letter-spacing:.14em;margin-right:auto;font-weight:400}
+.grid{display:grid;gap:20px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr))}
+.card{background:var(--linho);border-radius:var(--r-card);padding:28px;min-width:0}
+.band{margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px))}
+.band-dark{background:var(--escuro);color:var(--areia)}
+.band-dark .eyebrow{color:var(--pessego)}
+.band-dark .card{background:#4D3A2F;color:var(--areia)}
+.band-linho{background:var(--linho)}
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:var(--r-pill);padding:15px 28px;font:700 1rem/1 var(--f-body);text-decoration:none;border:2px solid transparent;cursor:default}
+.btn-p{background:var(--cafe);color:#fff}
+.btn-s{background:transparent;color:var(--cafe);border-color:var(--cafe)}
+.btn-w{background:var(--pulso);color:#fff}
+.hero{padding-block:72px 56px;margin-top:0}
+.hero .lead{font-size:1.2rem;margin-top:24px}
+.row{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.sw{border-radius:22px;overflow:hidden;background:var(--linho);min-width:0}
+.sw i{display:block;height:96px}
+.sw div{padding:14px 18px 18px;font-size:.88rem;line-height:1.45}
+.sw b{display:block;font-size:1rem}
+code,.mono{font-family:ui-monospace,Menlo,monospace;font-size:.82rem}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid #E3D2C3;vertical-align:top}
+th{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--cafe)}
+.tw{overflow-x:auto}
+.tag{display:inline-block;border-radius:var(--r-pill);padding:4px 12px;font-size:.78rem;font-weight:700;background:#E8D8C8;color:var(--grao)}
+.tag.ok{background:#DDE3D5;color:#3C4A31}
+.tag.todo{background:#F4D9CF;color:#7C2E1B}
+ul{margin:0;padding-left:1.1em;display:grid;gap:6px}
+.stack{display:grid;gap:16px}
+.pill-row{display:flex;flex-wrap:wrap;gap:10px}
+.pill{border-radius:var(--r-pill);padding:10px 18px;background:var(--linho);font-size:.92rem}
+.copy{border-left:3px solid var(--pulso);padding:4px 0 4px 18px}
+.copy .k{font:700 .7rem/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--cafe);margin-bottom:8px;display:block}
+.copy .t{font-family:var(--f-display);font-size:1.4rem;line-height:1.25}
+.pulse path{stroke-dasharray:420;stroke-dashoffset:420;animation:draw 2.4s ease forwards .3s}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.pulse path{animation:none;stroke-dashoffset:0}html{scroll-behavior:auto}}
+.sitemap{display:grid;gap:10px}
+.sitemap div{background:var(--linho);border-radius:18px;padding:14px 18px}
+.sitemap b{display:block}
+.sitemap span{font-size:.88rem;color:#6B5546}
+footer{padding-block:48px;font-size:.9rem;color:#6B5546}
+.bigtype{font-family:var(--f-display);font-weight:300;font-size:clamp(2.6rem,9vw,5.5rem);line-height:1}
+.mock{border-radius:34px;background:var(--linho);padding:22px;display:grid;gap:16px}
+.ph{border-radius:22px;background:linear-gradient(135deg,#E6D3C1,#D3BBA6);min-height:180px;display:grid;place-items:center;color:#7A5C49;font-size:.85rem;text-align:center;padding:16px}
+</style>
+
+<header class="nav"><div class="wrap">
+  <strong>COMED</strong>
+  <a href="#ref">Referência</a><a href="#cores">Cores</a><a href="#logo">Logo</a><a href="#tipo">Tipografia</a><a href="#ui">Componentes</a><a href="#copy">Copy</a><a href="#seo">Google</a><a href="#pendencias">Pendências</a>
+</div></header>
+
+<main>
+<div class="wrap hero">
+  <p class="eyebrow">Clínica Comed · Ipatinga/MG · Horto</p>
+  <h1 style="margin-top:20px">Identidade, design system e copy do site</h1>
+  <p class="lead">Um site institucional com um trabalho só: fazer a Comed aparecer quando alguém pesquisa no Google por consulta em Ipatinga e levar essa pessoa ao WhatsApp em poucos toques. Aqui estão as decisões de cor, logo, tipografia, componentes, textos e SEO local, na mesma ordem usada na Odontocenter.</p>
+  <div class="row">
+    <a class="btn btn-p" href="#copy">Ver textos do site</a>
+    <a class="btn btn-s" href="#pendencias">O que falta confirmar</a>
+  </div>
+</div>
+
+<section id="ref" class="band band-linho"><div class="wrap stack" style="gap:32px">
+  <div class="stack"><p class="eyebrow">1 · Avaliação da referência</p>
+  <h2>O que a Hims ensina, e o que não serve para a Comed</h2>
+  <p class="muted">Aviso: a rede desta sessão bloqueou hims.com e instagram.com. A leitura abaixo vem do que se conhece do estilo da Hims e das informações que você enviou sobre as artes da Comed. Vale conferir as cores reais da clínica numa conversa com ela.</p></div>
+  <div class="grid g2">
+    <div class="card" style="background:var(--areia)"><h3>Aproveitar</h3><ul style="margin-top:16px">
+      <li><b>Bege como chão da página.</b> Cria calma e dá cara de cuidado, longe do azul-e-branco hospitalar.</li>
+      <li><b>Títulos grandes em serifa.</b> Dão voz humana e diferenciam de sites de convênio.</li>
+      <li><b>Cantos muito arredondados e botões em pílula.</b> Passam acolhimento e são fáceis de tocar no celular.</li>
+      <li><b>Um CTA claro por tela.</b> Na Hims é "comprar". Na Comed é "agendar pelo WhatsApp".</li>
+      <li><b>Seções em faixas alternadas</b> (bege, linho, faixa escura), com bastante respiro.</li>
+      <li><b>Animações suaves ao rolar.</b> Entrada com leve subida, sem nada que atrapalhe a leitura.</li>
+    </ul></div>
+    <div class="card" style="background:var(--areia)"><h3>Deixar de fora</h3><ul style="margin-top:16px">
+      <li><b>Vitrine de produtos, carrinho e preços.</b> A Comed vende consulta, não produto.</li>
+      <li><b>Promessas de resultado e antes e depois.</b> Vedado pelo CFM.</li>
+      <li><b>Comparativos agressivos e urgência.</b> Não combinam com publicidade médica.</li>
+      <li><b>Questionário de triagem online.</b> Fica para uma fase 2, se a clínica quiser agenda online.</li>
+    </ul></div>
+  </div>
+  <div class="card" style="background:var(--areia)">
+    <h3>Como o bege convive com cores fortes</h3>
+    <p style="margin-top:12px">O bege é um neutro quente. Ele aceita bem cores que também têm base quente ou terrosa, como terracota, café e pêssego, porque todas dividem o mesmo fundo amarelado. Cores frias e muito saturadas (azul-royal, verde-limão) brigam com ele. A regra do sistema: <b>bege ocupa cerca de 70% da tela, café e linho 20%, e o acento Pulso (terracota) só 5 a 10%</b>, sempre em algo que merece o olho: o batimento da logo, o botão de WhatsApp, um número de destaque. Uma faixa escura (grão) por página dá contraste e ritmo, como a Hims faz com o verde-escuro.</p>
+    <div class="row" style="margin-top:20px" aria-label="Proporção de cor">
+      <div style="flex:70;min-width:120px;height:44px;border-radius:22px 0 0 22px;background:var(--areia);border:1px solid #D9C6B5;display:grid;place-items:center;font-size:.8rem">Areia 70%</div>
+      <div style="flex:20;min-width:70px;height:44px;background:var(--cafe);color:#fff;display:grid;place-items:center;font-size:.8rem">Café 20%</div>
+      <div style="flex:7;min-width:50px;height:44px;background:var(--pulso);color:#fff;display:grid;place-items:center;font-size:.8rem">5–10%</div>
+      <div style="flex:3;min-width:34px;height:44px;border-radius:0 22px 22px 0;background:var(--salvia)"></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="cores"><div class="wrap stack" style="gap:32px">
+  <div class="stack"><p class="eyebrow">2 · Cores</p>
+  <h2>Paleta Comed</h2>
+  <p>As cinco primeiras cores são as que você tirou das artes da clínica. As três de baixo são acréscimos meus para dar vida e orientar o clique. Troque os valores em <code>:root</code> se a clínica enviar o manual de marca.</p></div>
+  <div class="grid g4">
+    <div class="sw"><i style="background:#F3E7DC"></i><div><b>Areia</b><code>#F3E7DC</code><br>Fundo da página</div></div>
+    <div class="sw"><i style="background:#FAF4ED"></i><div><b>Linho</b><code>#FAF4ED</code><br>Cartões e faixas claras</div></div>
+    <div class="sw"><i style="background:#7A5C49"></i><div><b>Café</b><code>#7A5C49</code><br>Marca, botão principal, links de apoio</div></div>
+    <div class="sw"><i style="background:#3F2E25"></i><div><b>Grão</b><code>#3F2E25</code><br>Texto e faixa escura</div></div>
+    <div class="sw"><i style="background:#B39C8B"></i><div><b>Taupe</b><code>#B39C8B</code><br>Logo, filetes, ilustração. Nunca para texto</div></div>
+    <div class="sw"><i style="background:#B4492F"></i><div><b>Pulso <span class="tag todo">novo</span></b><code>#B4492F</code><br>Batimento, WhatsApp, destaques</div></div>
+    <div class="sw"><i style="background:#5B6B4E"></i><div><b>Sálvia <span class="tag todo">novo</span></b><code>#5B6B4E</code><br>Selos "convênio aceito", confirmações</div></div>
+    <div class="sw"><i style="background:#E9B8A3"></i><div><b>Pêssego <span class="tag todo">novo</span></b><code>#E9B8A3</code><br>Realce sobre a faixa escura</div></div>
+  </div>
+  <div class="card"><h3>Contraste (WCAG)</h3>
+    <div class="tw" style="margin-top:14px"><table>
+      <tr><th>Combinação</th><th>Razão</th><th>Uso</th></tr>
+      <tr><td>Grão sobre Areia</td><td>10,6:1</td><td><span class="tag ok">AAA</span> texto corrido</td></tr>
+      <tr><td>Grão sobre Linho</td><td>11,8:1</td><td><span class="tag ok">AAA</span> texto em cartões</td></tr>
+      <tr><td>Café sobre Areia</td><td>5,0:1</td><td><span class="tag ok">AA</span> links e títulos de apoio</td></tr>
+      <tr><td>Branco sobre Café</td><td>6,1:1</td><td><span class="tag ok">AA</span> botão principal</td></tr>
+      <tr><td>Branco sobre Pulso</td><td>5,3:1</td><td><span class="tag ok">AA</span> botão WhatsApp</td></tr>
+      <tr><td>Pulso sobre Linho</td><td>4,9:1</td><td><span class="tag ok">AA</span> texto em cartão</td></tr>
+      <tr><td>Pulso sobre Areia</td><td>4,4:1</td><td>Só texto grande (a partir de 24 px)</td></tr>
+      <tr><td>Pêssego sobre Grão</td><td>7,3:1</td><td><span class="tag ok">AAA</span> realces na faixa escura</td></tr>
+      <tr><td>Taupe sobre Areia</td><td>2,2:1</td><td><span class="tag todo">Não usar para texto</span></td></tr>
+    </table></div>
+  </div>
+</div></section>
+
+<section id="logo" class="band band-dark"><div class="wrap stack" style="gap:32px">
+  <div class="stack"><p class="eyebrow">3 · Logo</p>
+  <h2>Recriação fiel, até chegar o arquivo oficial</h2>
+  <p>Cruz de cantos arredondados com a linha de batimento cruzando, "COMED" em serifa fina e "CONSULTÓRIOS MÉDICOS" em caixa-alta espaçada, em bege-acinzentado. Esta versão é uma recriação a partir das artes. Peça à clínica o SVG ou PNG transparente e use a versão oficial no lugar.</p></div>
+  <div class="grid g2">
+    <div class="card" style="background:var(--areia);color:var(--grao);display:grid;place-items:center;padding:40px">
+      <svg class="pulse" viewBox="0 0 360 150" width="100%" style="max-width:380px" role="img" aria-label="Logo Clínica Comed: cruz com batimento cardíaco, COMED, Consultórios Médicos">
+        <g transform="translate(14,14)">
+          <path d="M40 6h22a10 10 0 0 1 10 10v24h24a10 10 0 0 1 10 10v22a10 10 0 0 1-10 10H72v24a10 10 0 0 1-10 10H40a10 10 0 0 1-10-10V92H6A10 10 0 0 1-4 82V60a10 10 0 0 1 10-10h24V16A10 10 0 0 1 40 6Z" transform="translate(6,0) scale(.95)" fill="none" stroke="#B39C8B" stroke-width="3.2" stroke-linejoin="round" style="stroke-dasharray:none;stroke-dashoffset:0;animation:none"/>
+          <path d="M-2 66h30l8-18 12 40 10-30 6 8h28" fill="none" stroke="#B4492F" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" transform="translate(2,-4)"/>
+        </g>
+        <text x="132" y="72" font-family="Cormorant Garamond,Georgia,serif" font-weight="300" font-size="58" letter-spacing="6" fill="#B39C8B">COMED</text>
+        <text x="134" y="102" font-family="DM Sans,sans-serif" font-size="11.5" letter-spacing="3.6" fill="#B39C8B">CONSULTÓRIOS MÉDICOS</text>
+      </svg>
+    </div>
+    <div class="card" style="background:var(--cafe);display:grid;place-items:center;padding:40px">
+      <svg viewBox="0 0 360 150" width="100%" style="max-width:380px" role="img" aria-label="Logo Comed em versão clara">
+        <g transform="translate(14,14)">
+          <path d="M40 6h22a10 10 0 0 1 10 10v24h24a10 10 0 0 1 10 10v22a10 10 0 0 1-10 10H72v24a10 10 0 0 1-10 10H40a10 10 0 0 1-10-10V92H6A10 10 0 0 1-4 82V60a10 10 0 0 1 10-10h24V16A10 10 0 0 1 40 6Z" transform="translate(6,0) scale(.95)" fill="none" stroke="#F3E7DC" stroke-width="3.2" stroke-linejoin="round"/>
+          <path d="M-2 66h30l8-18 12 40 10-30 6 8h28" fill="none" stroke="#F3E7DC" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" transform="translate(2,-4)"/>
+        </g>
+        <text x="132" y="72" font-family="Cormorant Garamond,Georgia,serif" font-weight="300" font-size="58" letter-spacing="6" fill="#F3E7DC">COMED</text>
+        <text x="134" y="102" font-family="DM Sans,sans-serif" font-size="11.5" letter-spacing="3.6" fill="#F3E7DC">CONSULTÓRIOS MÉDICOS</text>
+      </svg>
+    </div>
+  </div>
+  <div class="grid g3">
+    <div class="card"><h3>Versões</h3><p style="margin-top:10px">Horizontal (cabeçalho), só o símbolo (favicon, avatar do WhatsApp e do Google), e monocromática clara sobre café ou grão.</p></div>
+    <div class="card"><h3>Cores</h3><p style="margin-top:10px">Original em taupe. No site, o batimento ganha Pulso no cabeçalho e no favicon, para a marca ter um ponto de vida.</p></div>
+    <div class="card"><h3>Área de respiro</h3><p style="margin-top:10px">Meia altura da cruz em todos os lados. Largura mínima de 120 px no site e 16 px para o símbolo sozinho.</p></div>
+  </div>
+</div></section>
+
+<section id="tipo"><div class="wrap stack" style="gap:32px">
+  <div class="stack"><p class="eyebrow">4 · Tipografia</p>
+  <h2>Serifa com calor, texto limpo</h2>
+  <p>A fonte final está em aberto. Este par segue a logo (serifa fina) sem sacrificar leitura no celular. A troca é feita em duas variáveis: <code>--f-display</code> e <code>--f-body</code>.</p></div>
+  <div class="card">
+    <p class="eyebrow">Títulos · Fraunces Light/Regular</p>
+    <div class="bigtype" style="margin-top:16px">A serviço da sua saúde</div>
+    <p style="margin-top:28px" class="eyebrow">Texto · DM Sans 400/500/700</p>
+    <p style="margin-top:12px">Consultas em cardiologia, dermatologia, endocrinologia e mais, no Horto, em Ipatinga. Agende pelo WhatsApp e escolha o melhor horário.</p>
+  </div>
+  <div class="card"><div class="tw"><table>
+    <tr><th>Papel</th><th>Fonte</th><th>Desktop</th><th>Celular</th></tr>
+    <tr><td>H1</td><td>Fraunces 300–400</td><td>70 px / 1,05</td><td>38 px</td></tr>
+    <tr><td>H2</td><td>Fraunces 400</td><td>48 px / 1,1</td><td>30 px</td></tr>
+    <tr><td>H3</td><td>Fraunces 400</td><td>22 px / 1,2</td><td>20 px</td></tr>
+    <tr><td>Corpo</td><td>DM Sans 400</td><td>17 px / 1,6</td><td>16 px</td></tr>
+    <tr><td>Etiqueta</td><td>DM Sans 700, caixa-alta</td><td>12 px, espaçamento .16em</td><td>12 px</td></tr>
+    <tr><td>Logo</td><td>Cormorant Garamond 300</td><td>só na logo</td><td>só na logo</td></tr>
+  </table></div></div>
+</div></section>
+
+<section id="ui" class="band band-linho"><div class="wrap stack" style="gap:32px">
+  <div class="stack"><p class="eyebrow">5 · Componentes e movimento</p>
+  <h2>Peças do site</h2></div>
+  <div class="grid g2">
+    <div class="card" style="background:var(--areia)"><h3>Botões</h3>
+      <div class="row"><span class="btn btn-w">Agendar pelo WhatsApp</span><span class="btn btn-p">Ver especialidades</span><span class="btn btn-s">Como chegar</span></div>
+      <p class="muted" style="margin-top:16px;font-size:.92rem">Pílula, 52 px de altura mínima. O botão de WhatsApp é o único em Pulso e aparece no cabeçalho, no hero, em cada especialidade e fixo no rodapé do celular.</p></div>
+    <div class="card" style="background:var(--areia)"><h3>Selos e chips</h3>
+      <div class="pill-row" style="margin-top:16px"><span class="tag ok">Aceitamos Bradesco Saúde</span><span class="tag">Cardiologia</span><span class="tag">CRM-MG 57291 · RQE 53108</span></div>
+      <p class="muted" style="margin-top:16px;font-size:.92rem">Sálvia para convênio aceito, areia escura para categorias, e nome com CRM e RQE sempre visíveis perto do profissional.</p></div>
+  </div>
+  <div class="grid g3">
+    <div class="card" style="background:var(--areia)"><h3>Cartão de especialidade</h3>
+      <div class="ph" style="margin-top:14px;min-height:110px">foto ou ilustração em tom quente</div>
+      <p style="margin-top:14px"><b>Cardiologia</b><br><span class="muted">Quando procurar, quem atende, exames no consultório.</span></p>
+      <p style="margin-top:10px;color:var(--pulso);font-weight:700">Agendar →</p></div>
+    <div class="card" style="background:var(--areia)"><h3>Cartão de profissional</h3>
+      <div class="ph" style="margin-top:14px;min-height:110px">foto profissional</div>
+      <p style="margin-top:14px"><b>Dr. José Afonso Torres da Silva Júnior</b><br><span class="muted">Cardiologia · CRM-MG 57291 · RQE 53108</span></p></div>
+    <div class="card" style="background:var(--areia)"><h3>Barra fixa no celular</h3>
+      <div class="mock" style="margin-top:14px"><div class="ph" style="min-height:70px">conteúdo</div>
+      <div style="display:flex;gap:10px"><span class="btn btn-w" style="flex:1;justify-content:center;padding:14px">WhatsApp</span><span class="btn btn-s" style="padding:14px 18px">Ligar</span></div></div></div>
+  </div>
+  <div class="card" style="background:var(--areia)"><h3>Movimento</h3>
+    <ul style="margin-top:14px"><li>Seções entram com subida de 16 px e opacidade em 500 ms, uma única vez, e ficam visíveis sem JavaScript.</li>
+    <li>A linha de batimento da logo se desenha uma vez no carregamento (2,4 s).</li>
+    <li>Respeitar <code>prefers-reduced-motion</code>: sem animação nenhuma.</li>
+    <li>Raios: cartões 28 px, imagens 22 px, botões em pílula. Espaçamento em múltiplos de 8.</li></ul></div>
+</div></section>
+
+<section id="copy"><div class="wrap stack" style="gap:40px">
+  <div class="stack"><p class="eyebrow">6 · Copy</p>
+  <h2>Textos da página inicial e estrutura do site</h2>
+  <p>Tom: acolhedor, direto, em português do dia a dia. Sem promessa de cura, sem "melhor", sem preço promocional, conforme a publicidade médica do CFM. Itens entre colchetes dependem de confirmação da clínica. Revisão final pelo médico responsável.</p></div>
+
+  <div class="stack" style="gap:28px">
+    <div class="copy"><span class="k">Hero</span><div class="t">Atendimento médico completo e acolhedor, no Horto, em Ipatinga.</div>
+      <p style="margin-top:10px">Cardiologia, dermatologia, endocrinologia, gastroenterologia, ginecologia e obstetrícia, psiquiatria e fisioterapia dermatofuncional. Marque sua consulta pelo WhatsApp.</p>
+      <p style="margin-top:10px" class="muted">Botão principal: <b>Agendar pelo WhatsApp</b> · secundário: <b>Ver especialidades</b> · linha de apoio: Seg a sex, [8h30 às 17h30]</p></div>
+    <div class="copy"><span class="k">Faixa de confiança</span><div class="t">Médicos com CRM e RQE à vista · Convênios aceitos · Fácil de agendar</div>
+      <p style="margin-top:10px" class="muted">Três itens curtos sob o hero. Só incluir nota do Google depois de conferir a ficha.</p></div>
+    <div class="copy"><span class="k">Como agendar (3 passos reais)</span><div class="t">Agendar leva poucos minutos.</div>
+      <p style="margin-top:10px"><b>1.</b> Toque em Agendar e abra o WhatsApp. <b>2.</b> Diga a especialidade e se vai pelo convênio ou particular. <b>3.</b> Receba a confirmação do dia e do horário. [Prazo médio de resposta: confirmar]</p></div>
+    <div class="copy"><span class="k">Especialidades · título</span><div class="t">Cuidado para cada fase da sua saúde</div>
+      <p style="margin-top:10px">Escolha a especialidade para ver quando procurar o médico, quem atende e como agendar.</p></div>
+    <div class="copy"><span class="k">Sobre nós</span><div class="t">A Comed nasceu do sonho de oferecer atendimento médico completo e acolhedor.</div>
+      <p style="margin-top:10px">Reunimos em um só lugar consultórios médicos de várias especialidades, para que você resolva mais de uma necessidade de saúde sem rodar a cidade. Nosso compromisso está na frase que nos guia: a serviço da sua saúde e do seu bem-estar. [Ano de fundação e história: confirmar]</p></div>
+    <div class="copy"><span class="k">Equipe</span><div class="t">Quem cuida de você</div>
+      <p style="margin-top:10px">Dr. José Afonso Torres da Silva Júnior, cardiologia, CRM-MG 57291, RQE 53108. Dra. Letícia Lopes Ramos Torres, CRM-MG 58506 [especialidade e RQE: confirmar]. Cartões "Mais profissionais" prontos para os demais médicos e fisioterapeutas.</p></div>
+    <div class="copy"><span class="k">Convênios</span><div class="t">Atendemos pelo seu plano</div>
+      <p style="margin-top:10px">Usisaúde, Cemig Saúde, Cenibra, Cenibra Logística, AAPI, Bradesco Saúde, Metasita e Amagis. [Confirmar lista atual e a cobertura por especialidade] Atendimento particular: [confirmar].</p></div>
+    <div class="copy"><span class="k">Como chegar</span><div class="t">Estamos no Horto, perto do Clube Ipê</div>
+      <p style="margin-top:10px">[Rua Eucaliptos, 19, Horto, Ipatinga/MG, CEP 35160-297: confirmar]. Botões: <b>Abrir no Google Maps</b> e <b>Ligar (31) 3822-2030</b>. [Estacionamento e acessibilidade: confirmar]</p></div>
+    <div class="copy"><span class="k">Saúde em foco (mural educativo)</span><div class="t">Informação boa para o seu dia a dia</div>
+      <p style="margin-top:10px">Textos da clínica, como o de fome emocional, com revisão do médico. Cada texto leva a data, o autor com CRM e um convite discreto para agendar.</p></div>
+    <div class="copy"><span class="k">Perguntas frequentes (rascunho)</span><div class="t">Dúvidas comuns antes da consulta</div>
+      <p style="margin-top:10px">Como marco? Vocês aceitam meu plano? O que levo na primeira consulta? Como remarco ou cancelo? Qual o horário de atendimento? Onde fica a clínica e tem estacionamento? A recepção deve revisar com as perguntas reais.</p></div>
+    <div class="copy"><span class="k">Fechamento</span><div class="t">Sua próxima consulta está a uma mensagem de distância.</div>
+      <p style="margin-top:10px">Botão: <b>Agendar pelo WhatsApp</b></p></div>
+  </div>
+
+  <div class="card"><h3>Mensagem pronta do WhatsApp</h3>
+    <p style="margin-top:12px"><code>https://wa.me/553138222030?text=Olá! Gostaria de agendar uma consulta na Clínica Comed.</code></p>
+    <p class="muted" style="margin-top:10px;font-size:.92rem">Confirmar que o número recebe WhatsApp. Cada especialidade manda uma mensagem própria, por exemplo "…consulta de cardiologia", o que também mede qual página gera agendamento.</p></div>
+
+  <div class="stack"><h3>Mapa do site</h3>
+    <div class="sitemap">
+      <div><b>/ Início</b><span>Hero, confiança, como agendar, especialidades, equipe, convênios, como chegar, FAQ</span></div>
+      <div><b>/especialidades/cardiologia, /dermatologia, /endocrinologia, /gastroenterologia, /ginecologia-obstetricia, /psiquiatria, /fisioterapia-dermatofuncional</b><span>Uma página por especialidade: quando procurar, quem atende, exames, convênios, agendar</span></div>
+      <div><b>/equipe</b><span>Cartões com foto, CRM, RQE e currículo curto</span></div>
+      <div><b>/convenios</b><span>Lista, cobertura por especialidade e atendimento particular</span></div>
+      <div><b>/sobre</b><span>História e valores</span></div>
+      <div><b>/contato</b><span>Mapa, horários, telefone, WhatsApp</span></div>
+      <div><b>/saude-em-foco</b><span>Mural de textos educativos</span></div>
+      <div><b>/privacidade</b><span>Política de privacidade e cookies (LGPD)</span></div>
+    </div></div>
+</div></section>
+
+<section id="seo" class="band band-dark"><div class="wrap stack" style="gap:32px">
+  <div class="stack"><p class="eyebrow">7 · Encontrar a clínica no Google</p>
+  <h2>SEO local e agendamento</h2>
+  <p>Quem busca "cardiologista em Ipatinga" quer um endereço, um horário e um botão. O site e a ficha do Google precisam dizer a mesma coisa.</p></div>
+  <div class="grid g2">
+    <div class="card"><h3>Prioridade 1: ficha do Google</h3><ul style="margin-top:14px">
+      <li>Corrigir o endereço (Horto x Centro nos diretórios) e unificar fichas duplicadas.</li>
+      <li>Categoria principal "Clínica médica", com as especialidades nas secundárias.</li>
+      <li>Horário, telefone, link do site e botão de agendamento apontando para o WhatsApp.</li>
+      <li>Fotos reais da fachada, recepção, consultórios e equipe.</li>
+      <li>Atualizar CNES e Doctoralia com o endereço atual.</li>
+    </ul></div>
+    <div class="card"><h3>Prioridade 2: o site</h3><ul style="margin-top:14px">
+      <li>Uma página por especialidade com cidade e bairro no texto.</li>
+      <li>Endereço, telefone e horário escritos em texto, no rodapé de todas as páginas.</li>
+      <li>Marcação schema.org <code>MedicalClinic</code> e <code>Physician</code>.</li>
+      <li>Site rápido no celular: imagens leves, fontes limitadas, sem carrossel pesado.</li>
+      <li>Mapa com link, não embed pesado.</li>
+    </ul></div>
+  </div>
+  <div class="card"><h3>Títulos e descrições</h3><div class="tw" style="margin-top:14px"><table>
+    <tr><th>Página</th><th>Title (até 60)</th><th>Description (até 155)</th></tr>
+    <tr><td>Início</td><td>Clínica Comed | Consultórios Médicos em Ipatinga</td><td>Cardiologia, dermatologia, endocrinologia e mais no Horto, Ipatinga. Aceitamos convênios. Agende pelo WhatsApp.</td></tr>
+    <tr><td>Cardiologia</td><td>Cardiologista em Ipatinga | Clínica Comed</td><td>Consulta de cardiologia no Horto, em Ipatinga. Veja quando procurar o cardiologista, convênios aceitos e agende pelo WhatsApp.</td></tr>
+    <tr><td>Dermatologia</td><td>Dermatologista em Ipatinga | Clínica Comed</td><td>Consulta dermatológica no Horto, em Ipatinga. Saiba quando procurar o dermatologista e agende pelo WhatsApp.</td></tr>
+    <tr><td>Convênios</td><td>Convênios aceitos | Clínica Comed Ipatinga</td><td>Atendemos Bradesco Saúde, Cemig Saúde, Usisaúde, Cenibra e outros. Confira por especialidade.</td></tr>
+  </table></div></div>
+  <div class="card"><h3>Metas de agendamento</h3><ul style="margin-top:14px">
+    <li>Botão de WhatsApp visível em todas as telas, sem pedir cadastro antes.</li>
+    <li>Cada botão leva a mensagem pronta com a especialidade da página.</li>
+    <li>Medir cliques no WhatsApp, ligações e rotas pelo Google Analytics e pela ficha do Google.</li>
+    <li>Fase 2, se a clínica quiser: agenda online ou formulário de pedido de horário.</li>
+  </ul></div>
+</div></section>
+
+<section id="pendencias"><div class="wrap stack" style="gap:32px">
+  <div class="stack"><p class="eyebrow">8 · Pendências</p>
+  <h2>O que a clínica precisa confirmar ou enviar</h2></div>
+  <div class="grid g3">
+    <div class="card"><h3>Identidade</h3><ul style="margin-top:14px"><li>Logo oficial (SVG ou PNG transparente) e manual de marca</li><li>Confirmar as cores</li><li>Fonte, se houver</li><li>Fotos reais: fachada, recepção, consultórios, equipe</li></ul></div>
+    <div class="card"><h3>Operação</h3><ul style="margin-top:14px"><li>Endereço atual e ponto de referência</li><li>Horário (a pausa de almoço citada pelo Google parece estranha) e sábados</li><li>Se o (31) 3822-2030 recebe WhatsApp e quem responde</li><li>E-mail e Facebook</li><li>Prazo médio de resposta e agenda online</li><li>Particular, valor e formas de pagamento</li></ul></div>
+    <div class="card"><h3>Médicos e conteúdo</h3><ul style="margin-top:14px"><li>Foto, especialidade, RQE, currículo e dias de cada profissional</li><li>Lista atual de convênios e cobertura</li><li>Por especialidade: quando procurar, quem atende, exames</li><li>Perguntas reais da recepção</li><li>Depoimentos só com autorização escrita</li><li>Nota do Google, se for incluir</li></ul></div>
+    <div class="card"><h3>Legal e técnico</h3><ul style="margin-top:14px"><li>Razão social, CNPJ e ano de fundação</li><li>Política de privacidade e aviso de cookies (LGPD)</li><li>Revisão do médico responsável conforme regras do CFM</li><li>Domínio (por exemplo clinicacomed.com.br)</li><li>Acessos: Google Meu Negócio, Instagram, Facebook</li></ul></div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">Clínica Comed · Consultórios Médicos · Horto, Ipatinga/MG · Responsáveis: Dr. José Afonso Torres da Silva Júnior, CRM-MG 57291, RQE 53108 · Dra. Letícia Lopes Ramos Torres, CRM-MG 58506 · [CNPJ: confirmar]</div></footer>
