@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://comed-ipatinga.vercel.app/sitemap.xml
