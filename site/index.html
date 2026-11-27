@@ -245,6 +245,7 @@ a:hover .ph-hover,.tile:hover .ph-hover{filter:brightness(1.06) saturate(1.05)}
 @media (min-width:720px){.specs{grid-template-columns:1fr 1fr}}
 @media (min-width:1080px){.specs{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .specs .pcard{min-height:clamp(440px,36vw,540px)}
+.specs .pcard .who{padding-right:58px}
 .specs .pcard .h2{font-size:clamp(28px,2.4vw,36px);line-height:1.05;max-width:13ch}
 .pcard.psi{background:radial-gradient(120% 90% at 85% 10%,#5A4235 0%,var(--grao-2) 70%);justify-content:flex-end}
 .pcard.psi::after{display:none}
@@ -776,7 +777,7 @@ details[open]::details-content{block-size:auto}
     if(!c)bad.push($('#f-cons')); if(!t||(t==='Convênio'&&!cv))bad.push($('#f-tipo')); if(n.length<2)bad.push($('#f-nome'));
     if(show){mark($('#f-cons'),!c);mark($('#f-tipo'),!t||(t==='Convênio'&&!cv));mark($('#f-nome'),n.length<2)}
     if(bad.length)return {bad:bad};
-    var tx='Olá! Vim pelo site da Clínica Comed e gostaria de agendar.\n\n*Consulta:* '+CONS[c]+'\n*Atendimento:* '+(t==='Convênio'?'Convênio ('+cv+')':'Particular')+(p?'\n*Período:* '+p:'')+'\n*Paciente:* '+n+(o?'\n*Observações:* '+o:'')+'\n\nPodem me informar os horários disponíveis?';
+    var tx='Olá! Vim pelo site da Clínica Comed e gostaria de agendar.\n\n*Especialidade:* '+CONS[c]+'\n*Atendimento:* '+(t==='Convênio'?'Convênio ('+cv+')':'Particular')+(p?'\n*Período:* '+p:'')+'\n*Paciente:* '+n+(o?'\n*Observações:* '+o:'')+'\n\nPodem me informar os horários disponíveis?';
     return {url:wa(tx)};
   }
   function sync(){var r=build(false);send.href=r.url||'#agendar'}
