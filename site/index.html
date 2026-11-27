@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Clínica Comed | Cardiologia e consultas médicas no Horto, Ipatinga/MG</title>
+<title>Clínica Comed | Especialidades médicas e psicologia no Horto, Ipatinga/MG</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Clínica Comed, no Horto, em Ipatinga: cardiologia com especialista e consultas médicas. Aceitamos Usisaúde, Cemig Saúde, Bradesco Saúde e outros convênios. Agende pelo WhatsApp (31) 3822-2030.">
+<meta name="description" content="Clínica Comed, no Horto, em Ipatinga: cardiologia, endocrinologia, medicina de família, ginecologia e obstetrícia e psicologia. Aceitamos Usisaúde, Cemig Saúde, Bradesco Saúde e outros convênios. Agende pelo WhatsApp (31) 3822-2030.">
 <meta name="theme-color" content="#3F2E25">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
@@ -28,12 +28,14 @@
   "address": {"@type": "PostalAddress", "streetAddress": "Rua Eucaliptos, 19", "addressLocality": "Ipatinga", "addressRegion": "MG", "postalCode": "35160-297", "addressCountry": "BR"},
   "areaServed": "Ipatinga, MG",
   "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:30", "closes": "17:30"}],
-  "medicalSpecialty": ["Cardiovascular"],
+  "medicalSpecialty": ["Cardiovascular","Endocrine","PrimaryCare","Gynecologic","Obstetric"],
   "paymentAccepted": "Convênios: Usisaúde, Cemig Saúde, Cenibra, Cenibra Logística, AAPI, Bradesco Saúde, Metasita, Amagis",
   "sameAs": ["https://www.instagram.com/clinica_comed/"],
   "employee": [
     {"@type": "Physician", "name": "Dr. José Afonso Torres da Silva Júnior", "medicalSpecialty": "Cardiovascular", "identifier": "CRM-MG 57291, RQE 53108"},
-    {"@type": "Physician", "name": "Dra. Letícia Lopes Ramos Torres", "identifier": "CRM-MG 58506"}
+    {"@type": "Physician", "name": "Dra. Letícia Lopes Ramos Torres", "medicalSpecialty": ["Endocrine","PrimaryCare"], "identifier": "CRM-MG 58506"},
+    {"@type": "Physician", "name": "Dra. Amanda Marques Rodrigues", "medicalSpecialty": ["Gynecologic","Obstetric"], "identifier": "CRM-MG 77448"},
+    {"@type": "Person", "name": "Cleiton Jhonata Severiano", "jobTitle": "Psicólogo", "identifier": "CRP 04/37170"}
   ]
 }
 </script>
@@ -237,6 +239,39 @@ a:hover .ph-hover,.tile:hover .ph-hover{filter:brightness(1.06) saturate(1.05)}
 .when li .xb{width:18px;height:18px;margin-top:3px}
 .when .urg{margin-top:14px;font-size:14px;color:var(--grao-suave)}
 
+
+/* specialties grid: five photo cards and a list of the other specialties */
+.specs{display:grid;gap:12px}
+@media (min-width:720px){.specs{grid-template-columns:1fr 1fr}}
+@media (min-width:1080px){.specs{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.specs .pcard{min-height:clamp(440px,36vw,540px)}
+.specs .pcard .h2{font-size:clamp(28px,2.4vw,36px);line-height:1.05;max-width:13ch}
+.pcard.psi{background:radial-gradient(120% 90% at 85% 10%,#5A4235 0%,var(--grao-2) 70%);justify-content:flex-end}
+.pcard.psi::after{display:none}
+.psi-x{position:absolute;right:-18%;top:-14%;width:86%;z-index:-1;pointer-events:none}
+.psi-x path{fill:none;stroke:rgba(250,244,237,.18);stroke-width:1.3;vector-effect:non-scaling-stroke}
+.psi-q{margin:0 0 auto;padding-top:56px;font-weight:300;font-size:clamp(26px,2.4vw,34px);line-height:1.15;letter-spacing:-.02em;color:var(--argila-clara);max-width:14ch}
+.more{display:flex;flex-direction:column;gap:16px;padding:28px;border-radius:var(--r-sec);background:rgba(250,244,237,.06);box-shadow:inset 0 0 0 1px rgba(250,244,237,.12)}
+.more ul{display:grid;gap:12px;margin-top:4px}
+.more li{display:flex;align-items:center;gap:12px;font-size:clamp(19px,1.6vw,22px);font-weight:450;letter-spacing:-.01em}
+.more p{color:rgba(250,244,237,.7);font-size:15px;margin-top:auto}
+.more .btn{align-self:flex-start}
+/* team with real photos */
+.team{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+@media (min-width:1080px){.team{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.pro{display:flex;flex-direction:column;background:var(--linho);border-radius:var(--r-sec);padding:10px 10px 20px;min-width:0}
+.pro .ph{position:relative;overflow:hidden;border-radius:16px;aspect-ratio:4/5;background:var(--argila-clara)}
+.pro .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease),filter .8s ease}
+.pro:hover .ph img{transform:scale(1.04);filter:brightness(1.05)}
+.pro .ph .sym{position:absolute;left:12px;bottom:12px;width:40px;height:40px;border-radius:12px;background:rgba(46,33,26,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:grid;place-items:center}
+.pro .ph .sym svg{width:26px}
+.pro h3{margin:16px 8px 0;font-weight:500;font-size:clamp(17px,1.4vw,20px);line-height:1.2;letter-spacing:-.015em}
+.pro .sp{margin:6px 8px 0;color:var(--grao-suave);font-size:14.5px;line-height:1.4}
+.pro .reg{display:flex;flex-wrap:wrap;gap:6px;margin:12px 8px 0}
+.pro .reg span{padding:5px 10px;border-radius:var(--r-btn);background:var(--areia);font-size:12.5px;font-variant-numeric:tabular-nums}
+.pro .btn{margin:16px 8px 0;align-self:flex-start;white-space:normal;text-align:left;line-height:1.2;min-height:42px;padding:10px 16px;font-size:14px}
+@media (max-width:560px){.pro h3{font-size:16px}.pro .btn{font-size:13px;padding:9px 12px}}
+
 /* ---------- pinned cross reveal */
 .pin{position:relative;height:170vh;margin-top:12px}
 .pin-in{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:grid;place-items:center;background:var(--areia)}
@@ -415,9 +450,9 @@ details[open]::details-content{block-size:auto}
 <div class="drawer" id="drawer" aria-hidden="true">
   <button class="drawer-close" type="button" aria-label="Fechar menu"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></button>
   <a class="lk" href="#clinica">A clínica</a>
-  <a class="lk" href="#consultas">Consultas</a>
+  <a class="lk" href="#consultas">Especialidades</a>
   <a class="lk" href="#convenios">Convênios</a>
-  <a class="lk" href="#medicos">Médicos</a>
+  <a class="lk" href="#medicos">Profissionais</a>
   <a class="lk" href="#duvidas">Dúvidas</a>
   <a class="btn b-grao" href="#agendar">Agendar consulta</a>
 </div>
@@ -430,7 +465,7 @@ details[open]::details-content{block-size:auto}
   <div class="navcard"><a class="logo" href="#topo" aria-label="Clínica Comed, início"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 498 140" aria-hidden="true" focusable="false" aria-label="Clínica Comed, Consultórios Médicos"><g stroke="#B39C8B" fill="none"><path d="M47.00 19.00A15 15 0 0 1 62.00 4.00L78.00 4.00A15 15 0 0 1 93.00 19.00L93.00 37.00A10 10 0 0 0 103.00 47.00L121.00 47.00A15 15 0 0 1 136.00 62.00L136.00 78.00A15 15 0 0 1 121.00 93.00L103.00 93.00A10 10 0 0 0 93.00 103.00L93.00 121.00A15 15 0 0 1 78.00 136.00L62.00 136.00A15 15 0 0 1 47.00 121.00L47.00 103.00A10 10 0 0 0 37.00 93.00L19.00 93.00A15 15 0 0 1 4.00 78.00L4.00 62.00A15 15 0 0 1 19.00 47.00L37.00 47.00A10 10 0 0 0 47.00 37.00Z" fill="none" stroke="#B39C8B" stroke-width="3.2" stroke-linejoin="round"/><path d="M14 70H42L51 55L62 91L73 36L83 79L89 70H126" fill="none" stroke="#B39C8B" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M209.39 44.05A23 25.5 0 1 0 209.39 81.95" fill="none" stroke-width="2.8" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M209.39 44.05v9" fill="none" stroke-width="1.6" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M209.39 81.95v-9" fill="none" stroke-width="1.6" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M230 63A25 25.5 0 1 1 280 63A25 25.5 0 1 1 230 63Z" fill="none" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M299 38V88" fill="none" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M355 38V88" fill="none" stroke-width="2.0" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M298 38L327 88" fill="none" stroke-width="3.4" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M327 88L356 38" fill="none" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M292 38H306" fill="none" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M291 88H307" fill="none" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M348 38H362" fill="none" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M347 88H363" fill="none" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M387 38V88" fill="none" stroke-width="3.4" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M387 38.8H418" fill="none" stroke-width="1.6" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M387 87.2H418" fill="none" stroke-width="1.6" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M387 63H411" fill="none" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M418 38v10" fill="none" stroke-width="1.6" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M418 88v-10" fill="none" stroke-width="1.6" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M411 58v10" fill="none" stroke-width="1.4" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M379 38H395" fill="none" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M379 88H395" fill="none" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M445 38V88" fill="none" stroke-width="3.4" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M445 38.8H462A26 24.20 0 0 1 462 87.2H445" fill="none" stroke-width="2.0" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M437 38H453" fill="none" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M437 88H453" fill="none" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter"/><g transform="translate(171.00 106.00) scale(0.860)"><path d="M7.6 2.6A4 4.4 0 1 0 7.6 7.4" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(187.53 106.00) scale(0.860)"><path d="M4 0A4 5 0 1 0 4 10A4 5 0 1 0 4 0Z" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(204.07 106.00) scale(0.860)"><path d="M0 10V0L8 10V0" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(220.60 106.00) scale(0.860)"><path d="M7.4 1.9C6.6 0.1 0.9 -0.1 0.9 3C0.9 5.5 7.4 4.6 7.4 7.2C7.4 10.4 1.5 10.3 0.5 8.1" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(237.13 106.00) scale(0.860)"><path d="M0 0V6A4 4 0 0 0 8 6V0" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(253.66 106.00) scale(0.860)"><path d="M0 0V10H7" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(270.20 106.00) scale(0.860)"><path d="M0 0H8M4 0V10" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(286.73 106.00) scale(0.860)"><path d="M4 0A4 5 0 1 0 4 10A4 5 0 1 0 4 0Z" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M3.2 -2L5.6 -4" fill="none" stroke-width="1.34"/></g><g transform="translate(303.26 106.00) scale(0.860)"><path d="M0 10V0H4A2.8 2.8 0 0 1 4 5.6H0M4 5.6L8 10" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(319.79 106.00) scale(0.860)"><path d="M4 0V10" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(336.33 106.00) scale(0.860)"><path d="M4 0A4 5 0 1 0 4 10A4 5 0 1 0 4 0Z" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(352.86 106.00) scale(0.860)"><path d="M7.4 1.9C6.6 0.1 0.9 -0.1 0.9 3C0.9 5.5 7.4 4.6 7.4 7.2C7.4 10.4 1.5 10.3 0.5 8.1" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(385.92 106.00) scale(0.860)"><path d="M0 10V0L4 7L8 0V10" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(402.46 106.00) scale(0.860)"><path d="M8 0H0V10H8M0 5H6" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M3.2 -2L5.6 -4" fill="none" stroke-width="1.34"/></g><g transform="translate(418.99 106.00) scale(0.860)"><path d="M0 0H3A5 5 0 0 1 3 10H0Z" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(435.52 106.00) scale(0.860)"><path d="M4 0V10" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(452.05 106.00) scale(0.860)"><path d="M7.6 2.6A4 4.4 0 1 0 7.6 7.4" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(468.59 106.00) scale(0.860)"><path d="M4 0A4 5 0 1 0 4 10A4 5 0 1 0 4 0Z" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(485.12 106.00) scale(0.860)"><path d="M7.4 1.9C6.6 0.1 0.9 -0.1 0.9 3C0.9 5.5 7.4 4.6 7.4 7.2C7.4 10.4 1.5 10.3 0.5 8.1" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g></g></svg></a><nav aria-label="Seções"><a href="#clinica">A clínica</a><a href="#consultas">Consultas</a><a href="#convenios">Convênios</a><a href="#medicos">Médicos</a><a href="#duvidas">Dúvidas</a></nav><a class="btn btn-sm b-lima" href="#agendar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.6-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg><span class="t-long">Agendar consulta</span><span class="t-short">Agendar</span></a><button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Abrir menu"><i></i></button></div>
   <div class="hero-copy dark">
     <h1><span class="ln"><span style="--d:.15s">A serviço da sua</span></span><span class="ln"><span style="--d:.27s">saúde e do seu</span></span><span class="ln"><span style="--d:.39s">bem-estar</span></span></h1>
-    <p class="sub rv" style="--d:.6s">Cardiologia com especialista e consultas médicas no Horto, em Ipatinga. Convênios aceitos e agendamento pelo WhatsApp.</p>
+    <p class="sub rv" style="--d:.6s">Cardiologia, endocrinologia, medicina de família, ginecologia e obstetrícia, psicologia e mais, no Horto, em Ipatinga. Convênios aceitos e agendamento pelo WhatsApp.</p>
     <div class="row rv" style="--d:.72s">
       <a class="btn b-lima" href="#agendar">Agendar consulta <svg class="go" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="go" d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9"/></svg></a>
       <a class="btn b-line-l" href="#convenios">Ver convênios</a>
@@ -438,7 +473,7 @@ details[open]::details-content{block-size:auto}
   </div>
   <ul class="hero-meta rv" style="--d:.9s">
     <li><b>8 convênios</b>aceitos, entre eles Bradesco e Cemig Saúde</li>
-    <li><b>CRM e RQE</b>dos médicos informados no site</li>
+    <li><b>CRM, RQE e CRP</b>de cada profissional informados no site</li>
   </ul>
 </header>
 
@@ -453,8 +488,8 @@ details[open]::details-content{block-size:auto}
       <p>Você é recebido pelo nome e tem tempo para tirar as dúvidas.</p><span class="grain"></span></div>
     <div class="tile t-linho rv" style="--d:.08s">
       <h3 class="h3">Você sabe quem é o seu médico</h3>
-      <p>Nome completo, CRM e, no caso do especialista, o RQE da especialidade.</p>
-      <div class="chips"><span>CRM-MG 57291</span><span>RQE 53108</span><span>CRM-MG 58506</span></div>
+      <p>Nome completo e registro no conselho de cada profissional, com o RQE da especialidade.</p>
+      <div class="chips"><span>CRM-MG 57291</span><span>CRM-MG 58506</span><span>CRM-MG 77448</span><span>CRP 04/37170</span></div>
     </div>
     <div class="tile ph rv-img" style="--d:.16s"><img class="bg ph-hover" data-par src="img/familia-parque.jpg" alt="Pai e filho abraçados num parque" loading="lazy">
       <h3 class="h3">Perto de casa, no Horto</h3><p>Perto do Clube Ipê.</p><span class="grain"></span></div>
@@ -472,26 +507,59 @@ details[open]::details-content{block-size:auto}
 
 <section class="sec band-grao dark consultas" id="consultas" aria-labelledby="h-cs"><div class="wrap">
   <div class="sec-head split">
-    <h2 class="h2 rv" id="h-cs">Cardiologia com especialista e consultas médicas</h2>
-    <p class="lead rv" style="--d:.1s">Escolha a consulta e veja quem atende. Os registros podem ser conferidos no Conselho Regional de Medicina.</p>
+    <h2 class="h2 rv" id="h-cs">Especialidades da Comed</h2>
+    <p class="lead rv" style="--d:.1s">Escolha a especialidade e veja quem atende. Os registros podem ser conferidos nos conselhos de Medicina e de Psicologia.</p>
   </div>
-  <div class="pc">
-    <a class="pcard rv-img" href="#agendar" data-consulta="cardio">
-      <img src="img/consulta.jpg" alt="Médico conversando com um paciente durante a consulta" loading="lazy">
-      <span class="tag sp">Especialidade</span><span class="cap">Imagem ilustrativa</span>
+  <div class="specs">
+    <a class="pcard rv-img" href="#agendar" data-consulta="cardiologia">
+      <img src="img/esp-cardiologia.jpg" alt="Dr. José Afonso no consultório, com um modelo de coração sobre a mesa" loading="lazy">
+      <span class="tag sp">Especialidade</span>
       <h3 class="h2">Cardiologia</h3>
-      <p>Avaliação do coração, da pressão e dos fatores de risco, com cardiologista registrado.</p>
+      <p>Pressão, coração e fatores de risco, com cardiologista titulado.</p>
       <span class="who"><span>Dr. José Afonso Torres da Silva Júnior</span><span>CRM-MG 57291</span><span>RQE 53108</span></span>
       <span class="go-c" aria-hidden="true"><svg class="go" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="go" d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9"/></svg></span><span class="grain"></span>
     </a>
-    <a class="pcard rv-img" style="--d:.12s" href="#agendar" data-consulta="clinica">
-      <img src="img/consulta-medica.jpg" alt="Médico examinando o ouvido de um paciente no consultório" loading="lazy">
-      <span class="tag">Consulta médica</span><span class="cap">Imagem ilustrativa</span>
-      <h3 class="h2">Consulta médica</h3>
-      <p>Consulta com médica para queixas do dia a dia, acompanhamento e orientação.</p>
+    <a class="pcard rv-img" style="--d:.08s" href="#agendar" data-consulta="endocrinologia">
+      <img src="img/esp-endocrinologia.jpg" alt="Dra. Letícia Lopes no consultório" loading="lazy">
+      <span class="tag sp">Especialidade</span>
+      <h3 class="h2">Endocrinologia</h3>
+      <p>Diabetes, tireoide, controle de peso e acompanhamento depois da cirurgia bariátrica.</p>
       <span class="who"><span>Dra. Letícia Lopes Ramos Torres</span><span>CRM-MG 58506</span></span>
       <span class="go-c" aria-hidden="true"><svg class="go" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="go" d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9"/></svg></span><span class="grain"></span>
     </a>
+    <a class="pcard rv-img" style="--d:.16s" href="#agendar" data-consulta="familia">
+      <img src="img/familia-parque.jpg" alt="Pai e filho abraçados num parque" loading="lazy">
+      <span class="tag sp">Especialidade</span><span class="cap">Imagem ilustrativa</span>
+      <h3 class="h2">Medicina de Família e Comunidade</h3>
+      <p>Cuidado contínuo da saúde da família, da prevenção ao acompanhamento de doenças crônicas.</p>
+      <span class="who"><span>Dra. Letícia Lopes Ramos Torres</span><span>CRM-MG 58506</span></span>
+      <span class="go-c" aria-hidden="true"><svg class="go" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="go" d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9"/></svg></span><span class="grain"></span>
+    </a>
+    <a class="pcard rv-img" href="#agendar" data-consulta="ginecologia">
+      <img src="img/esp-ginecologia-familia.jpg" alt="Mãe com o bebê no colo, abraçada à filha" loading="lazy">
+      <span class="tag sp">Especialidade</span><span class="cap">Imagem ilustrativa</span>
+      <h3 class="h2">Ginecologia e Obstetrícia</h3>
+      <p>Consulta de rotina, preventivo, vacinas, pré-natal e acompanhamento da gestação.</p>
+      <span class="who"><span>Dra. Amanda Marques Rodrigues</span><span>CRM-MG 77448</span></span>
+      <span class="go-c" aria-hidden="true"><svg class="go" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="go" d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9"/></svg></span><span class="grain"></span>
+    </a>
+    <a class="pcard psi rv-img" style="--d:.08s" href="#agendar" data-consulta="psicologia">
+      <svg class="psi-x" viewBox="-.02 -.02 1.04 1.04" aria-hidden="true"><path d="M0.2300 0.0850A0.0850 0.0850 0 0 1 0.3150 0.0000L0.6850 0.0000A0.0850 0.0850 0 0 1 0.7700 0.0850L0.7700 0.1700A0.0600 0.0600 0 0 0 0.8300 0.2300L0.9150 0.2300A0.0850 0.0850 0 0 1 1.0000 0.3150L1.0000 0.6850A0.0850 0.0850 0 0 1 0.9150 0.7700L0.8300 0.7700A0.0600 0.0600 0 0 0 0.7700 0.8300L0.7700 0.9150A0.0850 0.0850 0 0 1 0.6850 1.0000L0.3150 1.0000A0.0850 0.0850 0 0 1 0.2300 0.9150L0.2300 0.8300A0.0600 0.0600 0 0 0 0.1700 0.7700L0.0850 0.7700A0.0850 0.0850 0 0 1 0.0000 0.6850L0.0000 0.3150A0.0850 0.0850 0 0 1 0.0850 0.2300L0.1700 0.2300A0.0600 0.0600 0 0 0 0.2300 0.1700Z"/></svg>
+      <span class="tag sp">Psicologia</span>
+      <blockquote class="psi-q">Falar sobre o que dói é o começo do cuidado.</blockquote>
+      <h3 class="h2">Psicologia</h3>
+      <p>Psicoterapia individual com abordagem psicanalítica freudiana.</p>
+      <span class="who"><span>Cleiton Jhonata Severiano</span><span>CRP 04/37170</span></span>
+      <span class="go-c" aria-hidden="true"><svg class="go" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="go" d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9"/></svg></span><span class="grain"></span>
+    </a>
+    <div class="more rv" style="--d:.16s">
+      <h3 class="h3">Também na Comed</h3>
+      <ul>
+        <li><svg class="xb" viewBox="-0.06 -0.06 1.12 1.12" aria-hidden="true" focusable="false"><path d="M0.3258 0.1100A0.1100 0.1100 0 0 1 0.4358 0.0000L0.5642 0.0000A0.1100 0.1100 0 0 1 0.6742 0.1100L0.6742 0.2508A0.0750 0.0750 0 0 0 0.7492 0.3258L0.8900 0.3258A0.1100 0.1100 0 0 1 1.0000 0.4358L1.0000 0.5642A0.1100 0.1100 0 0 1 0.8900 0.6742L0.7492 0.6742A0.0750 0.0750 0 0 0 0.6742 0.7492L0.6742 0.8900A0.1100 0.1100 0 0 1 0.5642 1.0000L0.4358 1.0000A0.1100 0.1100 0 0 1 0.3258 0.8900L0.3258 0.7492A0.0750 0.0750 0 0 0 0.2508 0.6742L0.1100 0.6742A0.1100 0.1100 0 0 1 0.0000 0.5642L0.0000 0.4358A0.1100 0.1100 0 0 1 0.1100 0.3258L0.2508 0.3258A0.0750 0.0750 0 0 0 0.3258 0.2508Z"/></svg>Dermatologia</li><li><svg class="xb" viewBox="-0.06 -0.06 1.12 1.12" aria-hidden="true" focusable="false"><path d="M0.3258 0.1100A0.1100 0.1100 0 0 1 0.4358 0.0000L0.5642 0.0000A0.1100 0.1100 0 0 1 0.6742 0.1100L0.6742 0.2508A0.0750 0.0750 0 0 0 0.7492 0.3258L0.8900 0.3258A0.1100 0.1100 0 0 1 1.0000 0.4358L1.0000 0.5642A0.1100 0.1100 0 0 1 0.8900 0.6742L0.7492 0.6742A0.0750 0.0750 0 0 0 0.6742 0.7492L0.6742 0.8900A0.1100 0.1100 0 0 1 0.5642 1.0000L0.4358 1.0000A0.1100 0.1100 0 0 1 0.3258 0.8900L0.3258 0.7492A0.0750 0.0750 0 0 0 0.2508 0.6742L0.1100 0.6742A0.1100 0.1100 0 0 1 0.0000 0.5642L0.0000 0.4358A0.1100 0.1100 0 0 1 0.1100 0.3258L0.2508 0.3258A0.0750 0.0750 0 0 0 0.3258 0.2508Z"/></svg>Gastroenterologia</li><li><svg class="xb" viewBox="-0.06 -0.06 1.12 1.12" aria-hidden="true" focusable="false"><path d="M0.3258 0.1100A0.1100 0.1100 0 0 1 0.4358 0.0000L0.5642 0.0000A0.1100 0.1100 0 0 1 0.6742 0.1100L0.6742 0.2508A0.0750 0.0750 0 0 0 0.7492 0.3258L0.8900 0.3258A0.1100 0.1100 0 0 1 1.0000 0.4358L1.0000 0.5642A0.1100 0.1100 0 0 1 0.8900 0.6742L0.7492 0.6742A0.0750 0.0750 0 0 0 0.6742 0.7492L0.6742 0.8900A0.1100 0.1100 0 0 1 0.5642 1.0000L0.4358 1.0000A0.1100 0.1100 0 0 1 0.3258 0.8900L0.3258 0.7492A0.0750 0.0750 0 0 0 0.2508 0.6742L0.1100 0.6742A0.1100 0.1100 0 0 1 0.0000 0.5642L0.0000 0.4358A0.1100 0.1100 0 0 1 0.1100 0.3258L0.2508 0.3258A0.0750 0.0750 0 0 0 0.3258 0.2508Z"/></svg>Psiquiatria</li><li><svg class="xb" viewBox="-0.06 -0.06 1.12 1.12" aria-hidden="true" focusable="false"><path d="M0.3258 0.1100A0.1100 0.1100 0 0 1 0.4358 0.0000L0.5642 0.0000A0.1100 0.1100 0 0 1 0.6742 0.1100L0.6742 0.2508A0.0750 0.0750 0 0 0 0.7492 0.3258L0.8900 0.3258A0.1100 0.1100 0 0 1 1.0000 0.4358L1.0000 0.5642A0.1100 0.1100 0 0 1 0.8900 0.6742L0.7492 0.6742A0.0750 0.0750 0 0 0 0.6742 0.7492L0.6742 0.8900A0.1100 0.1100 0 0 1 0.5642 1.0000L0.4358 1.0000A0.1100 0.1100 0 0 1 0.3258 0.8900L0.3258 0.7492A0.0750 0.0750 0 0 0 0.2508 0.6742L0.1100 0.6742A0.1100 0.1100 0 0 1 0.0000 0.5642L0.0000 0.4358A0.1100 0.1100 0 0 1 0.1100 0.3258L0.2508 0.3258A0.0750 0.0750 0 0 0 0.3258 0.2508Z"/></svg>Fisioterapia dermatofuncional</li>
+      </ul>
+      <p>Pergunte à recepção quem atende e em quais dias.</p>
+      <a class="btn btn-sm b-lima" data-wa="Olá! Vim pelo site da Clínica Comed. Gostaria de saber os dias de atendimento da especialidade: " href="https://wa.me/553138222030" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.6-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>Perguntar no WhatsApp</a>
+    </div>
   </div>
   <div class="when rv">
     <div><h3 class="h3">Quando procurar o cardiologista</h3><p class="urg">Dor no peito forte ou que não passa, ou falta de ar intensa, é urgência: procure um pronto-socorro ou ligue 192.</p></div>
@@ -543,28 +611,11 @@ details[open]::details-content{block-size:auto}
 
 <section class="sec" id="medicos" aria-labelledby="h-md"><div class="wrap">
   <div class="sec-head split">
-    <h2 class="h2 rv" id="h-md">Médicos da Comed</h2>
-    <p class="lead rv" style="--d:.1s">Os registros abaixo podem ser conferidos no site do Conselho Regional de Medicina de Minas Gerais.</p>
+    <h2 class="h2 rv" id="h-md">Profissionais da Comed</h2>
+    <p class="lead rv" style="--d:.1s">Os registros abaixo podem ser conferidos nos sites do Conselho Regional de Medicina e do Conselho Regional de Psicologia de Minas Gerais.</p>
   </div>
-  <div class="docs">
-    <article class="doc rv">
-      <div class="mono" aria-hidden="true"><b>JA</b><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" aria-hidden="true" focusable="false" aria-label="Símbolo Comed: cruz com batimento cardíaco"><g stroke="#F3E7DC" fill="none"><path d="M47.00 19.00A15 15 0 0 1 62.00 4.00L78.00 4.00A15 15 0 0 1 93.00 19.00L93.00 37.00A10 10 0 0 0 103.00 47.00L121.00 47.00A15 15 0 0 1 136.00 62.00L136.00 78.00A15 15 0 0 1 121.00 93.00L103.00 93.00A10 10 0 0 0 93.00 103.00L93.00 121.00A15 15 0 0 1 78.00 136.00L62.00 136.00A15 15 0 0 1 47.00 121.00L47.00 103.00A10 10 0 0 0 37.00 93.00L19.00 93.00A15 15 0 0 1 4.00 78.00L4.00 62.00A15 15 0 0 1 19.00 47.00L37.00 47.00A10 10 0 0 0 47.00 37.00Z" fill="none" stroke="#F3E7DC" stroke-width="3.2" stroke-linejoin="round"/><path d="M14 70H42L51 55L62 91L73 36L83 79L89 70H126" fill="none" stroke="#F3E7DC" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></g></svg></div>
-      <div>
-        <h3 class="h3">Dr. José Afonso Torres da Silva Júnior</h3>
-        <p class="sp">Cardiologista</p>
-        <p class="reg"><span>CRM-MG 57291</span><span>RQE 53108</span></p>
-        <a class="btn btn-sm b-grao" href="#agendar" data-consulta="cardio">Agendar com o Dr. José Afonso</a>
-      </div>
-    </article>
-    <article class="doc rv" style="--d:.1s">
-      <div class="mono" aria-hidden="true"><b>LT</b><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" aria-hidden="true" focusable="false" aria-label="Símbolo Comed: cruz com batimento cardíaco"><g stroke="#F3E7DC" fill="none"><path d="M47.00 19.00A15 15 0 0 1 62.00 4.00L78.00 4.00A15 15 0 0 1 93.00 19.00L93.00 37.00A10 10 0 0 0 103.00 47.00L121.00 47.00A15 15 0 0 1 136.00 62.00L136.00 78.00A15 15 0 0 1 121.00 93.00L103.00 93.00A10 10 0 0 0 93.00 103.00L93.00 121.00A15 15 0 0 1 78.00 136.00L62.00 136.00A15 15 0 0 1 47.00 121.00L47.00 103.00A10 10 0 0 0 37.00 93.00L19.00 93.00A15 15 0 0 1 4.00 78.00L4.00 62.00A15 15 0 0 1 19.00 47.00L37.00 47.00A10 10 0 0 0 47.00 37.00Z" fill="none" stroke="#F3E7DC" stroke-width="3.2" stroke-linejoin="round"/><path d="M14 70H42L51 55L62 91L73 36L83 79L89 70H126" fill="none" stroke="#F3E7DC" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></g></svg></div>
-      <div>
-        <h3 class="h3">Dra. Letícia Lopes Ramos Torres</h3>
-        <p class="sp">Médica</p>
-        <p class="reg"><span>CRM-MG 58506</span></p>
-        <a class="btn btn-sm b-grao" href="#agendar" data-consulta="clinica">Agendar com a Dra. Letícia</a>
-      </div>
-    </article>
+  <div class="team">
+    <article class="pro rv" style="--d:0.00s"><div class="ph"><img src="img/pro-joseafonso.jpg" alt="Dr. José Afonso Torres da Silva Júnior" loading="lazy" width="640" height="800"><span class="sym" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" aria-hidden="true" focusable="false" aria-label="Símbolo Comed: cruz com batimento cardíaco"><g stroke="#F3E7DC" fill="none"><path d="M47.00 19.00A15 15 0 0 1 62.00 4.00L78.00 4.00A15 15 0 0 1 93.00 19.00L93.00 37.00A10 10 0 0 0 103.00 47.00L121.00 47.00A15 15 0 0 1 136.00 62.00L136.00 78.00A15 15 0 0 1 121.00 93.00L103.00 93.00A10 10 0 0 0 93.00 103.00L93.00 121.00A15 15 0 0 1 78.00 136.00L62.00 136.00A15 15 0 0 1 47.00 121.00L47.00 103.00A10 10 0 0 0 37.00 93.00L19.00 93.00A15 15 0 0 1 4.00 78.00L4.00 62.00A15 15 0 0 1 19.00 47.00L37.00 47.00A10 10 0 0 0 47.00 37.00Z" fill="none" stroke="#F3E7DC" stroke-width="3.2" stroke-linejoin="round"/><path d="M14 70H42L51 55L62 91L73 36L83 79L89 70H126" fill="none" stroke="#F3E7DC" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></g></svg></span></div><h3>Dr. José Afonso Torres da Silva Júnior</h3><p class="sp">Cardiologista</p><p class="reg"><span>CRM-MG 57291</span><span>RQE 53108</span></p><a class="btn b-grao" href="#agendar" data-consulta="cardiologia">Agendar com o Dr. José Afonso</a></article><article class="pro rv" style="--d:0.08s"><div class="ph"><img src="img/pro-leticia.jpg" alt="Dra. Letícia Lopes Ramos Torres" loading="lazy" width="640" height="800"><span class="sym" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" aria-hidden="true" focusable="false" aria-label="Símbolo Comed: cruz com batimento cardíaco"><g stroke="#F3E7DC" fill="none"><path d="M47.00 19.00A15 15 0 0 1 62.00 4.00L78.00 4.00A15 15 0 0 1 93.00 19.00L93.00 37.00A10 10 0 0 0 103.00 47.00L121.00 47.00A15 15 0 0 1 136.00 62.00L136.00 78.00A15 15 0 0 1 121.00 93.00L103.00 93.00A10 10 0 0 0 93.00 103.00L93.00 121.00A15 15 0 0 1 78.00 136.00L62.00 136.00A15 15 0 0 1 47.00 121.00L47.00 103.00A10 10 0 0 0 37.00 93.00L19.00 93.00A15 15 0 0 1 4.00 78.00L4.00 62.00A15 15 0 0 1 19.00 47.00L37.00 47.00A10 10 0 0 0 47.00 37.00Z" fill="none" stroke="#F3E7DC" stroke-width="3.2" stroke-linejoin="round"/><path d="M14 70H42L51 55L62 91L73 36L83 79L89 70H126" fill="none" stroke="#F3E7DC" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></g></svg></span></div><h3>Dra. Letícia Lopes Ramos Torres</h3><p class="sp">Medicina de Família e Comunidade e Endocrinologia</p><p class="reg"><span>CRM-MG 58506</span></p><a class="btn b-grao" href="#agendar" data-consulta="endocrinologia">Agendar com a Dra. Letícia</a></article><article class="pro rv" style="--d:0.16s"><div class="ph"><img src="img/pro-amanda.jpg" alt="Dra. Amanda Marques Rodrigues" loading="lazy" width="640" height="800"><span class="sym" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" aria-hidden="true" focusable="false" aria-label="Símbolo Comed: cruz com batimento cardíaco"><g stroke="#F3E7DC" fill="none"><path d="M47.00 19.00A15 15 0 0 1 62.00 4.00L78.00 4.00A15 15 0 0 1 93.00 19.00L93.00 37.00A10 10 0 0 0 103.00 47.00L121.00 47.00A15 15 0 0 1 136.00 62.00L136.00 78.00A15 15 0 0 1 121.00 93.00L103.00 93.00A10 10 0 0 0 93.00 103.00L93.00 121.00A15 15 0 0 1 78.00 136.00L62.00 136.00A15 15 0 0 1 47.00 121.00L47.00 103.00A10 10 0 0 0 37.00 93.00L19.00 93.00A15 15 0 0 1 4.00 78.00L4.00 62.00A15 15 0 0 1 19.00 47.00L37.00 47.00A10 10 0 0 0 47.00 37.00Z" fill="none" stroke="#F3E7DC" stroke-width="3.2" stroke-linejoin="round"/><path d="M14 70H42L51 55L62 91L73 36L83 79L89 70H126" fill="none" stroke="#F3E7DC" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></g></svg></span></div><h3>Dra. Amanda Marques Rodrigues</h3><p class="sp">Ginecologia e Obstetrícia</p><p class="reg"><span>CRM-MG 77448</span></p><a class="btn b-grao" href="#agendar" data-consulta="ginecologia">Agendar com a Dra. Amanda</a></article><article class="pro rv" style="--d:0.24s"><div class="ph"><img src="img/pro-cleiton.jpg" alt="Cleiton Jhonata Severiano" loading="lazy" width="640" height="800"><span class="sym" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" aria-hidden="true" focusable="false" aria-label="Símbolo Comed: cruz com batimento cardíaco"><g stroke="#F3E7DC" fill="none"><path d="M47.00 19.00A15 15 0 0 1 62.00 4.00L78.00 4.00A15 15 0 0 1 93.00 19.00L93.00 37.00A10 10 0 0 0 103.00 47.00L121.00 47.00A15 15 0 0 1 136.00 62.00L136.00 78.00A15 15 0 0 1 121.00 93.00L103.00 93.00A10 10 0 0 0 93.00 103.00L93.00 121.00A15 15 0 0 1 78.00 136.00L62.00 136.00A15 15 0 0 1 47.00 121.00L47.00 103.00A10 10 0 0 0 37.00 93.00L19.00 93.00A15 15 0 0 1 4.00 78.00L4.00 62.00A15 15 0 0 1 19.00 47.00L37.00 47.00A10 10 0 0 0 47.00 37.00Z" fill="none" stroke="#F3E7DC" stroke-width="3.2" stroke-linejoin="round"/><path d="M14 70H42L51 55L62 91L73 36L83 79L89 70H126" fill="none" stroke="#F3E7DC" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></g></svg></span></div><h3>Cleiton Jhonata Severiano</h3><p class="sp">Psicólogo, abordagem psicanalítica freudiana</p><p class="reg"><span>CRP 04/37170</span></p><a class="btn b-grao" href="#agendar" data-consulta="psicologia">Agendar com o Cleiton</a></article>
   </div>
 </div></section>
 
@@ -590,11 +641,11 @@ details[open]::details-content{block-size:auto}
 <section class="sec" id="duvidas" aria-labelledby="h-fq"><div class="wrap faqs">
   <div><h2 class="h2 rv" id="h-fq">Perguntas frequentes</h2><p class="lead rv" style="--d:.1s">Não achou sua dúvida? Pergunte pelo WhatsApp.</p></div>
   <div class="rv" style="--d:.1s">
-    <details><summary>Como marco uma consulta?<span class="pm"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></summary><p>Pelo formulário desta página ou pelo WhatsApp (31) 3822-2030. Diga qual consulta procura e se vai pelo convênio. A recepção responde com os dias e horários disponíveis.</p></details>
+    <details><summary>Como marco uma consulta?<span class="pm"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></summary><p>Pelo formulário desta página ou pelo WhatsApp (31) 3822-2030. Diga a especialidade e se vai pelo convênio. A recepção responde com os dias e horários disponíveis.</p></details>
     <details><summary>Vocês atendem pelo meu plano?<span class="pm"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></summary><p>Atendemos Usisaúde, Cemig Saúde, Cenibra, Cenibra Logística, AAPI, Bradesco Saúde, Metasita e Amagis. A cobertura pode variar, por isso a recepção confirma no agendamento.</p></details>
     <details><summary>O que levo na primeira consulta?<span class="pm"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></summary><p>Documento com foto, carteirinha do plano se for pelo convênio, pedido médico se tiver, exames anteriores e a lista dos remédios que você usa.</p></details>
     <details><summary>Como remarco ou cancelo?<span class="pm"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></summary><p>Avise pelo mesmo WhatsApp com o máximo de antecedência. Assim o horário fica livre para outro paciente.</p></details>
-    <details><summary>Como confiro o registro do médico?<span class="pm"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></summary><p>No site do Conselho Regional de Medicina de Minas Gerais, pesquise pelo nome ou pelo número do CRM. O RQE mostra a especialidade registrada.</p></details>
+    <details><summary>Como confiro o registro do profissional?<span class="pm"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span></summary><p>Médicos: no site do Conselho Regional de Medicina de Minas Gerais, pesquise pelo nome ou pelo CRM; o RQE mostra a especialidade registrada. Psicólogos: no Cadastro Nacional do Conselho Federal de Psicologia, pelo nome ou pelo CRP.</p></details>
   </div>
 </div></section>
 
@@ -609,12 +660,15 @@ details[open]::details-content{block-size:auto}
     </svg>
   </div>
   <form class="form rv" style="--d:.12s" id="form-agenda" novalidate>
-    <fieldset id="f-cons"><legend>1. Qual consulta?</legend>
-      <div class="choices">
-        <label><input type="radio" name="consulta" value="cardio"><span class="c">Cardiologia<small>Dr. José Afonso Torres da Silva Júnior, CRM-MG 57291, RQE 53108</small></span></label>
-        <label><input type="radio" name="consulta" value="clinica"><span class="c">Consulta médica<small>Dra. Letícia Lopes Ramos Torres, CRM-MG 58506</small></span></label>
-        <label><input type="radio" name="consulta" value="duvida"><span class="c">Ainda não sei<small>A recepção ajuda a escolher</small></span></label>
-      </div><p class="err">Escolha a consulta.</p></fieldset>
+    <fieldset id="f-cons"><legend>1. Qual especialidade?</legend>
+      <div class="choices c2">
+        <label><input type="radio" name="consulta" value="cardiologia"><span class="c">Cardiologia<small>Dr. José Afonso</small></span></label>
+        <label><input type="radio" name="consulta" value="endocrinologia"><span class="c">Endocrinologia<small>Dra. Letícia Lopes</small></span></label>
+        <label><input type="radio" name="consulta" value="familia"><span class="c">Medicina de Família<small>Dra. Letícia Lopes</small></span></label>
+        <label><input type="radio" name="consulta" value="ginecologia"><span class="c">Ginecologia e Obstetrícia<small>Dra. Amanda Marques</small></span></label>
+        <label><input type="radio" name="consulta" value="psicologia"><span class="c">Psicologia<small>Cleiton Severiano</small></span></label>
+        <label><input type="radio" name="consulta" value="outra"><span class="c">Outra ou não sei<small>A recepção ajuda a escolher</small></span></label>
+      </div><p class="err">Escolha a especialidade.</p></fieldset>
     <fieldset id="f-tipo"><legend>2. Como será o atendimento?</legend>
       <div class="choices c2">
         <label><input type="radio" name="tipo" value="Convênio"><span class="c">Convênio</span></label>
@@ -712,7 +766,7 @@ details[open]::details-content{block-size:auto}
 
   /* booking form → WhatsApp (the button is a real link, so it opens on the first tap) */
   var form=$('#form-agenda'), send=$('#send'), conv=$('#conv-box'), sel=$('#convenio');
-  var CONS={cardio:'Cardiologia com o Dr. José Afonso',clinica:'Consulta médica com a Dra. Letícia',duvida:'Ainda não sei, gostaria de orientação'};
+  var CONS={cardiologia:'Cardiologia com o Dr. José Afonso',endocrinologia:'Endocrinologia com a Dra. Letícia Lopes',familia:'Medicina de Família com a Dra. Letícia Lopes',ginecologia:'Ginecologia e Obstetrícia com a Dra. Amanda Marques',psicologia:'Psicologia com Cleiton Severiano',outra:'Outra especialidade ou ainda não sei'};
   function val(n){var c=$('input[name='+n+']:checked',form);return c?c.value:''}
   function mark(el,bad){el.classList.toggle('invalid',bad)}
   $$('[data-consulta]').forEach(function(a){a.addEventListener('click',function(){var r=$('input[name=consulta][value='+a.getAttribute('data-consulta')+']',form);if(r){r.checked=true;mark($('#f-cons'),false);sync()}})});
