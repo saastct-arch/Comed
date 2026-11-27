@@ -1,26 +1,14 @@
 [
  {
-  "arquivo": "img/consulta.jpg",
-  "autor": "Direct Media",
-  "fonte": "https://stocksnap.io/photo/doctor-patient-N9YCBA2UBU",
-  "licenca": "CC0 (domínio público)"
- },
- {
-  "arquivo": "img/cuidado.jpg",
-  "autor": "Direct Media",
-  "fonte": "https://stocksnap.io/photo/caregiver-nurse-QQEQNVMB0I",
-  "licenca": "CC0 (domínio público)"
- },
- {
   "arquivo": "img/hero.jpg",
   "autor": "Senior Living",
-  "fonte": "https://stocksnap.io/photo/senior-woman-FV8ODHJV17",
+  "fonte": "https://stocksnap.io/photo/couple-park-GL9XJQTLJK",
   "licenca": "CC0 (domínio público)"
  },
  {
-  "arquivo": "img/perto.jpg",
-  "autor": "Family First",
-  "fonte": "https://stocksnap.io/photo/black-family-FOMJTSRHS3",
+  "arquivo": "img/acolhimento.jpg",
+  "autor": "William Stitt",
+  "fonte": "https://stocksnap.io/photo/blackandwhite-people-SAI0X4QHXI",
   "licenca": "CC0 (domínio público)"
  },
  {
@@ -30,15 +18,27 @@
   "licenca": "CC0 (domínio público)"
  },
  {
-  "arquivo": "img/consulta-medica.jpg",
+  "arquivo": "img/consulta.jpg",
   "autor": "Direct Media",
   "fonte": "https://stocksnap.io/photo/doctor-patient-7NQJS4WWQW",
   "licenca": "CC0 (domínio público)"
  },
  {
+  "arquivo": "img/consulta-medica.jpg",
+  "autor": "Direct Media",
+  "fonte": "https://stocksnap.io/photo/ear-exam-TJSLVDWIA9",
+  "licenca": "CC0 (domínio público)"
+ },
+ {
+  "arquivo": "img/perto.jpg",
+  "autor": "Family First",
+  "fonte": "https://stocksnap.io/photo/black-family-FOMJTSRHS3",
+  "licenca": "CC0 (domínio público)"
+ },
+ {
   "arquivo": "img/agendar.jpg",
-  "autor": "Senior Living",
-  "fonte": "https://stocksnap.io/photo/happy-couple-KYAHVCONBY",
+  "autor": "Freestocks.org",
+  "fonte": "https://stocksnap.io/photo/bokeh-people-TO66YCNJNJ",
   "licenca": "CC0 (domínio público)"
  }
 ]

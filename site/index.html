@@ -68,8 +68,8 @@ button,input,select,textarea{font:inherit;color:inherit}
 .dark{--ring:var(--lima)}
 
 /* type */
-h1{font-weight:400;font-size:clamp(44px,6.6vw,96px);line-height:.98;letter-spacing:-.035em}
-.h2{font-weight:420;font-size:clamp(32px,3.9vw,56px);line-height:1.04;letter-spacing:-.028em;text-wrap:balance}
+h1{font-weight:400;font-size:clamp(46px,7.4vw,112px);line-height:.95;letter-spacing:-.04em}
+.h2{font-weight:430;font-size:clamp(34px,4.6vw,68px);line-height:1;letter-spacing:-.035em;text-wrap:balance}
 .h3{font-weight:500;font-size:clamp(20px,1.7vw,24px);line-height:1.2;letter-spacing:-.015em}
 .lead{font-size:clamp(17px,1.35vw,19px);line-height:1.55;color:var(--grao-suave);max-width:54ch}
 .sec{padding-block:clamp(72px,9vw,128px)}
@@ -104,6 +104,14 @@ h1{font-weight:400;font-size:clamp(44px,6.6vw,96px);line-height:.98;letter-spaci
 .anim .ln{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
 .anim .ln>span{display:inline-block;transform:translate3d(0,108%,0);transition:transform 1.2s var(--ease);transition-delay:var(--d,0s)}
 .anim .ready .ln>span{transform:none}
+
+/* ---------- photographic finish: film grain and warm light over every photo */
+.grain{position:absolute;inset:0;z-index:3;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .45 0 0 0 0 .4 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:220px;mix-blend-mode:overlay;opacity:.35}
+.glow{position:absolute;z-index:-1;pointer-events:none;border-radius:50%;filter:blur(10px);mix-blend-mode:screen}
+.hero .glow{width:min(70vw,900px);aspect-ratio:1;right:-18%;top:-38%;background:radial-gradient(circle,rgba(255,214,160,.55) 0%,rgba(255,190,130,.18) 38%,rgba(255,190,130,0) 68%)}
+@media (prefers-reduced-motion:no-preference){.hero .glow{animation:drift 14s ease-in-out infinite alternate}@keyframes drift{to{transform:translate(-6%,8%) scale(1.08)}}}
+.ph-hover{transition:transform 1.2s var(--ease),filter .8s ease}
+a:hover .ph-hover,.tile:hover .ph-hover{filter:brightness(1.06) saturate(1.05)}
 
 /* ---------- announce strip */
 .strip{background:var(--grao);color:var(--linho);font-size:14px}
@@ -147,11 +155,11 @@ h1{font-weight:400;font-size:clamp(44px,6.6vw,96px);line-height:.98;letter-spaci
 .hero{position:relative;margin:10px;border-radius:var(--r-sec);overflow:hidden;height:min(calc(100svh - 60px),880px);min-height:640px;background:var(--grao);color:var(--linho);isolation:isolate}
 @media (min-width:768px){.hero{margin:12px}}
 .hero-bg{position:absolute;inset:0;z-index:-2}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:72% 35%;transform:scale(1.12);transition:transform 2.6s var(--ease)}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:68% 40%;transform:scale(1.12);transition:transform 2.6s var(--ease)}
 .ready .hero-bg img,html:not(.anim) .hero-bg img{transform:scale(1)}
 .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--grao) 0%,var(--grao) 30%,rgba(63,46,37,.82) 40%,rgba(63,46,37,.25) 56%,rgba(63,46,37,0) 68%),linear-gradient(0deg,rgba(46,33,26,.5) 0%,rgba(46,33,26,0) 30%)}
-@media (min-width:901px){.hero-bg img{position:absolute;right:0;top:0;width:70%;object-position:62% 30%;transform-origin:70% 50%}}
-@media (max-width:900px){.hero-bg img{object-position:68% 30%}.hero-bg::after{background:linear-gradient(0deg,rgba(46,33,26,.94) 22%,rgba(46,33,26,.35) 62%,rgba(46,33,26,.1) 100%)}}
+@media (min-width:901px){.hero-bg img{position:absolute;right:0;top:0;width:70%;object-position:80% 40%;transform-origin:70% 50%}}
+@media (max-width:900px){.hero-bg img{object-position:72% 30%}.hero-bg::after{background:linear-gradient(0deg,rgba(46,33,26,.94) 22%,rgba(46,33,26,.35) 62%,rgba(46,33,26,.1) 100%)}}
 .hero .navcard{position:absolute;z-index:4;left:50%;top:12px;transform:translateX(-50%);width:calc(100% - 24px);max-width:1240px}
 .hero-copy{position:absolute;left:clamp(22px,4.6vw,72px);right:22px;bottom:clamp(30px,6.5vw,96px);max-width:820px}
 .hero h1 .ln:last-child>span{color:var(--argila-clara)}
@@ -177,9 +185,10 @@ h1{font-weight:400;font-size:clamp(44px,6.6vw,96px);line-height:.98;letter-spaci
 .tile p{margin-top:10px;font-size:16px;line-height:1.5;max-width:40ch}
 .tile.ph{color:var(--linho);justify-content:flex-end;background:var(--grao)}
 .tile.ph .bg{position:absolute;left:0;top:-8%;width:100%;height:116%;object-fit:cover;z-index:0;will-change:transform}
-.tile.ph::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(46,33,26,.82) 0%,rgba(46,33,26,.25) 45%,rgba(46,33,26,0) 70%)}
+.tile.ph::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(46,33,26,.9) 0%,rgba(46,33,26,.55) 48%,rgba(46,33,26,0) 78%)}
 .tile.ph>*:not(.bg){position:relative;z-index:2}
 .tile.ph p{color:rgba(250,244,237,.86)}
+.tile.ph>span.grain{position:absolute;z-index:1}
 .t-linho{background:var(--linho)}
 .t-linho p{color:var(--grao-suave)}
 .t-grao{background:var(--grao);color:var(--linho)}
@@ -203,9 +212,9 @@ h1{font-weight:400;font-size:clamp(44px,6.6vw,96px);line-height:.98;letter-spaci
 .pc{display:grid;gap:12px}
 @media (min-width:860px){.pc{grid-template-columns:1fr 1fr}}
 .pcard{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:clamp(420px,42vw,560px);padding:28px;border-radius:var(--r-sec);overflow:hidden;color:var(--linho);text-decoration:none;isolation:isolate}
-.pcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transform:scale(1.02);transition:transform 1.2s var(--ease)}
+.pcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transform:scale(1.02);transition:transform 1.2s var(--ease),filter .8s ease}
 .pcard::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(46,33,26,.9) 0%,rgba(46,33,26,.45) 42%,rgba(46,33,26,0) 70%)}
-.pcard:hover img{transform:scale(1.07)}
+.pcard:hover img{transform:scale(1.07);filter:brightness(1.06) saturate(1.05)}
 .pcard .tag{position:absolute;left:20px;top:20px;padding:7px 14px;border-radius:var(--r-btn);background:var(--linho);color:var(--grao);font-size:13px;font-weight:600}
 .pcard .tag.sp{background:var(--lima)}
 .pcard .h2{font-size:clamp(30px,3vw,44px)}
@@ -217,7 +226,10 @@ h1{font-weight:400;font-size:clamp(44px,6.6vw,96px);line-height:.98;letter-spaci
 .pcard:hover .go-c{background:var(--lima);color:var(--grao);box-shadow:none}
 .pcard:hover .go-c svg{transform:translateX(3px)}
 .pcard .cap{bottom:auto;top:20px;right:20px}
-.when{margin-top:12px;display:grid;gap:28px;padding:clamp(24px,3vw,40px);border-radius:var(--r-sec);background:var(--linho)}
+.when{margin-top:12px;display:grid;gap:28px;padding:clamp(24px,3vw,40px);border-radius:var(--r-sec);background:rgba(250,244,237,.06);box-shadow:inset 0 0 0 1px rgba(250,244,237,.12)}
+.consultas .when .urg{color:rgba(250,244,237,.7)}
+.consultas .xb{color:var(--argila)}
+.consultas .lead{color:rgba(250,244,237,.74)}
 @media (min-width:980px){.when{grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:56px}}
 .when ul{display:grid;gap:14px}
 @media (min-width:640px){.when ul{grid-template-columns:1fr 1fr;column-gap:32px}}
@@ -226,7 +238,7 @@ h1{font-weight:400;font-size:clamp(44px,6.6vw,96px);line-height:.98;letter-spaci
 .when .urg{margin-top:14px;font-size:14px;color:var(--grao-suave)}
 
 /* ---------- pinned cross reveal */
-.pin{position:relative;height:260vh;margin-top:12px}
+.pin{position:relative;height:170vh;margin-top:12px}
 .pin-in{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:grid;place-items:center;background:var(--areia)}
 .pin-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.15);will-change:transform}
 .pin-shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(46,33,26,.85) 0%,rgba(46,33,26,.35) 60%,rgba(46,33,26,.2) 100%);opacity:0}
@@ -412,9 +424,9 @@ details[open]::details-content{block-size:auto}
 
 <main>
 <header class="hero" id="topo">
-  <div class="hero-bg"><img src="img/hero.jpg" alt="Casal maduro sorrindo, abraçado perto da janela" width="1680" height="1120" fetchpriority="high"></div>
+  <div class="glow" aria-hidden="true"></div><div class="hero-bg"><img src="img/hero.jpg" alt="Casal de meia-idade sorrindo, abraçado num banco de parque no outono" width="1680" height="1120" fetchpriority="high"><span class="grain"></span></div>
   <svg class="hero-cross" viewBox="-.02 -.02 1.04 1.04" aria-hidden="true"><path pathLength="1" d="M0.2300 0.0850A0.0850 0.0850 0 0 1 0.3150 0.0000L0.6850 0.0000A0.0850 0.0850 0 0 1 0.7700 0.0850L0.7700 0.1700A0.0600 0.0600 0 0 0 0.8300 0.2300L0.9150 0.2300A0.0850 0.0850 0 0 1 1.0000 0.3150L1.0000 0.6850A0.0850 0.0850 0 0 1 0.9150 0.7700L0.8300 0.7700A0.0600 0.0600 0 0 0 0.7700 0.8300L0.7700 0.9150A0.0850 0.0850 0 0 1 0.6850 1.0000L0.3150 1.0000A0.0850 0.0850 0 0 1 0.2300 0.9150L0.2300 0.8300A0.0600 0.0600 0 0 0 0.1700 0.7700L0.0850 0.7700A0.0850 0.0850 0 0 1 0.0000 0.6850L0.0000 0.3150A0.0850 0.0850 0 0 1 0.0850 0.2300L0.1700 0.2300A0.0600 0.0600 0 0 0 0.2300 0.1700Z"/></svg>
-  <svg class="hero-pulse" viewBox="0 0 1000 90" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M560 52H700L716 30L738 82L762 6L784 70L798 52H1000"/></svg>
+  <svg class="hero-pulse" viewBox="0 0 1000 90" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M400 52H452L468 30L490 82L514 6L536 70L550 52H585"/></svg>
   <div class="navcard"><a class="logo" href="#topo" aria-label="Clínica Comed, início"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 498 140" aria-hidden="true" focusable="false" aria-label="Clínica Comed, Consultórios Médicos"><g stroke="#B39C8B" fill="none"><path d="M47.00 19.00A15 15 0 0 1 62.00 4.00L78.00 4.00A15 15 0 0 1 93.00 19.00L93.00 37.00A10 10 0 0 0 103.00 47.00L121.00 47.00A15 15 0 0 1 136.00 62.00L136.00 78.00A15 15 0 0 1 121.00 93.00L103.00 93.00A10 10 0 0 0 93.00 103.00L93.00 121.00A15 15 0 0 1 78.00 136.00L62.00 136.00A15 15 0 0 1 47.00 121.00L47.00 103.00A10 10 0 0 0 37.00 93.00L19.00 93.00A15 15 0 0 1 4.00 78.00L4.00 62.00A15 15 0 0 1 19.00 47.00L37.00 47.00A10 10 0 0 0 47.00 37.00Z" fill="none" stroke="#B39C8B" stroke-width="3.2" stroke-linejoin="round"/><path d="M14 70H42L51 55L62 91L73 36L83 79L89 70H126" fill="none" stroke="#B39C8B" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M209.39 44.05A23 25.5 0 1 0 209.39 81.95" fill="none" stroke-width="2.8" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M209.39 44.05v9" fill="none" stroke-width="1.6" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M209.39 81.95v-9" fill="none" stroke-width="1.6" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M230 63A25 25.5 0 1 1 280 63A25 25.5 0 1 1 230 63Z" fill="none" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M299 38V88" fill="none" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M355 38V88" fill="none" stroke-width="2.0" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M298 38L327 88" fill="none" stroke-width="3.4" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M327 88L356 38" fill="none" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M292 38H306" fill="none" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M291 88H307" fill="none" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M348 38H362" fill="none" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M347 88H363" fill="none" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M387 38V88" fill="none" stroke-width="3.4" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M387 38.8H418" fill="none" stroke-width="1.6" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M387 87.2H418" fill="none" stroke-width="1.6" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M387 63H411" fill="none" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M418 38v10" fill="none" stroke-width="1.6" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M418 88v-10" fill="none" stroke-width="1.6" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M411 58v10" fill="none" stroke-width="1.4" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M379 38H395" fill="none" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M379 88H395" fill="none" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M445 38V88" fill="none" stroke-width="3.4" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M445 38.8H462A26 24.20 0 0 1 462 87.2H445" fill="none" stroke-width="2.0" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M437 38H453" fill="none" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M437 88H453" fill="none" stroke-width="1.5" stroke-linecap="butt" stroke-linejoin="miter"/><g transform="translate(171.00 106.00) scale(0.860)"><path d="M7.6 2.6A4 4.4 0 1 0 7.6 7.4" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(187.53 106.00) scale(0.860)"><path d="M4 0A4 5 0 1 0 4 10A4 5 0 1 0 4 0Z" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(204.07 106.00) scale(0.860)"><path d="M0 10V0L8 10V0" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(220.60 106.00) scale(0.860)"><path d="M7.4 1.9C6.6 0.1 0.9 -0.1 0.9 3C0.9 5.5 7.4 4.6 7.4 7.2C7.4 10.4 1.5 10.3 0.5 8.1" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(237.13 106.00) scale(0.860)"><path d="M0 0V6A4 4 0 0 0 8 6V0" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(253.66 106.00) scale(0.860)"><path d="M0 0V10H7" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(270.20 106.00) scale(0.860)"><path d="M0 0H8M4 0V10" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(286.73 106.00) scale(0.860)"><path d="M4 0A4 5 0 1 0 4 10A4 5 0 1 0 4 0Z" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M3.2 -2L5.6 -4" fill="none" stroke-width="1.34"/></g><g transform="translate(303.26 106.00) scale(0.860)"><path d="M0 10V0H4A2.8 2.8 0 0 1 4 5.6H0M4 5.6L8 10" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(319.79 106.00) scale(0.860)"><path d="M4 0V10" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(336.33 106.00) scale(0.860)"><path d="M4 0A4 5 0 1 0 4 10A4 5 0 1 0 4 0Z" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(352.86 106.00) scale(0.860)"><path d="M7.4 1.9C6.6 0.1 0.9 -0.1 0.9 3C0.9 5.5 7.4 4.6 7.4 7.2C7.4 10.4 1.5 10.3 0.5 8.1" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(385.92 106.00) scale(0.860)"><path d="M0 10V0L4 7L8 0V10" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(402.46 106.00) scale(0.860)"><path d="M8 0H0V10H8M0 5H6" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/><path d="M3.2 -2L5.6 -4" fill="none" stroke-width="1.34"/></g><g transform="translate(418.99 106.00) scale(0.860)"><path d="M0 0H3A5 5 0 0 1 3 10H0Z" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(435.52 106.00) scale(0.860)"><path d="M4 0V10" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(452.05 106.00) scale(0.860)"><path d="M7.6 2.6A4 4.4 0 1 0 7.6 7.4" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(468.59 106.00) scale(0.860)"><path d="M4 0A4 5 0 1 0 4 10A4 5 0 1 0 4 0Z" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g><g transform="translate(485.12 106.00) scale(0.860)"><path d="M7.4 1.9C6.6 0.1 0.9 -0.1 0.9 3C0.9 5.5 7.4 4.6 7.4 7.2C7.4 10.4 1.5 10.3 0.5 8.1" fill="none" stroke-width="1.34" stroke-linecap="butt" stroke-linejoin="miter"/></g></g></svg></a><nav aria-label="Seções"><a href="#clinica">A clínica</a><a href="#consultas">Consultas</a><a href="#convenios">Convênios</a><a href="#medicos">Médicos</a><a href="#duvidas">Dúvidas</a></nav><a class="btn btn-sm b-lima" href="#agendar"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.6-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.3 2.3 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg><span class="t-long">Agendar consulta</span><span class="t-short">Agendar</span></a><button class="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Abrir menu"><i></i></button></div>
   <div class="hero-copy dark">
     <h1><span class="ln"><span style="--d:.15s">A serviço da sua</span></span><span class="ln"><span style="--d:.27s">saúde e do seu</span></span><span class="ln"><span style="--d:.39s">bem-estar</span></span></h1>
@@ -436,16 +448,16 @@ details[open]::details-content{block-size:auto}
     <p class="lead rv" style="--d:.1s">Médicos identificados, convênios das empresas da região e um endereço fácil de chegar, no Horto.</p>
   </div>
   <div class="bento">
-    <div class="tile ph t1 rv-img"><img class="bg" data-par src="img/cuidado.jpg" alt="Profissional de saúde segurando as mãos de uma paciente, os dois sorrindo" loading="lazy">
+    <div class="tile ph t1 rv-img"><img class="bg ph-hover" data-par src="img/acolhimento.jpg" alt="Casal sorrindo, abraçado" loading="lazy">
       <h3 class="h3" style="font-size:clamp(24px,2.4vw,34px);max-width:16ch">Atendimento acolhedor, da primeira mensagem à consulta</h3>
-      <p>Você é recebido pelo nome e tem tempo para tirar as dúvidas.</p><span class="cap" style="top:14px;bottom:auto">Imagem ilustrativa</span></div>
+      <p>Você é recebido pelo nome e tem tempo para tirar as dúvidas.</p><span class="grain"></span></div>
     <div class="tile t-linho rv" style="--d:.08s">
       <h3 class="h3">Você sabe quem é o seu médico</h3>
       <p>Nome completo, CRM e, no caso do especialista, o RQE da especialidade.</p>
       <div class="chips"><span>CRM-MG 57291</span><span>RQE 53108</span><span>CRM-MG 58506</span></div>
     </div>
-    <div class="tile ph rv-img" style="--d:.16s"><img class="bg" data-par src="img/familia-parque.jpg" alt="Pai e filho abraçados num parque" loading="lazy">
-      <h3 class="h3">Perto de casa, no Horto</h3><p>Perto do Clube Ipê.</p></div>
+    <div class="tile ph rv-img" style="--d:.16s"><img class="bg ph-hover" data-par src="img/familia-parque.jpg" alt="Pai e filho abraçados num parque" loading="lazy">
+      <h3 class="h3">Perto de casa, no Horto</h3><p>Perto do Clube Ipê.</p><span class="grain"></span></div>
     <div class="tile t-grao dark rv" style="--d:.12s">
       <svg class="big-x" viewBox="0 0 1 1" aria-hidden="true"><path d="M0.3258 0.1100A0.1100 0.1100 0 0 1 0.4358 0.0000L0.5642 0.0000A0.1100 0.1100 0 0 1 0.6742 0.1100L0.6742 0.2508A0.0750 0.0750 0 0 0 0.7492 0.3258L0.8900 0.3258A0.1100 0.1100 0 0 1 1.0000 0.4358L1.0000 0.5642A0.1100 0.1100 0 0 1 0.8900 0.6742L0.7492 0.6742A0.0750 0.0750 0 0 0 0.6742 0.7492L0.6742 0.8900A0.1100 0.1100 0 0 1 0.5642 1.0000L0.4358 1.0000A0.1100 0.1100 0 0 1 0.3258 0.8900L0.3258 0.7492A0.0750 0.0750 0 0 0 0.2508 0.6742L0.1100 0.6742A0.1100 0.1100 0 0 1 0.0000 0.5642L0.0000 0.4358A0.1100 0.1100 0 0 1 0.1100 0.3258L0.2508 0.3258A0.0750 0.0750 0 0 0 0.3258 0.2508Z"/></svg>
       <h3 class="h3">Agendar é uma conversa</h3>
@@ -458,27 +470,27 @@ details[open]::details-content{block-size:auto}
   </div>
 </div></section>
 
-<section class="sec" id="consultas" aria-labelledby="h-cs" style="padding-top:0"><div class="wrap">
+<section class="sec band-grao dark consultas" id="consultas" aria-labelledby="h-cs"><div class="wrap">
   <div class="sec-head split">
     <h2 class="h2 rv" id="h-cs">Cardiologia com especialista e consultas médicas</h2>
     <p class="lead rv" style="--d:.1s">Escolha a consulta e veja quem atende. Os registros podem ser conferidos no Conselho Regional de Medicina.</p>
   </div>
   <div class="pc">
     <a class="pcard rv-img" href="#agendar" data-consulta="cardio">
-      <img src="img/consulta.jpg" alt="Médico conversando com uma paciente durante a consulta" loading="lazy">
+      <img src="img/consulta.jpg" alt="Médico conversando com um paciente durante a consulta" loading="lazy">
       <span class="tag sp">Especialidade</span><span class="cap">Imagem ilustrativa</span>
       <h3 class="h2">Cardiologia</h3>
       <p>Avaliação do coração, da pressão e dos fatores de risco, com cardiologista registrado.</p>
       <span class="who"><span>Dr. José Afonso Torres da Silva Júnior</span><span>CRM-MG 57291</span><span>RQE 53108</span></span>
-      <span class="go-c" aria-hidden="true"><svg class="go" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="go" d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9"/></svg></span>
+      <span class="go-c" aria-hidden="true"><svg class="go" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="go" d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9"/></svg></span><span class="grain"></span>
     </a>
     <a class="pcard rv-img" style="--d:.12s" href="#agendar" data-consulta="clinica">
-      <img src="img/consulta-medica.jpg" alt="Médico ouvindo um paciente no consultório" loading="lazy">
+      <img src="img/consulta-medica.jpg" alt="Médico examinando o ouvido de um paciente no consultório" loading="lazy">
       <span class="tag">Consulta médica</span><span class="cap">Imagem ilustrativa</span>
       <h3 class="h2">Consulta médica</h3>
       <p>Consulta com médica para queixas do dia a dia, acompanhamento e orientação.</p>
       <span class="who"><span>Dra. Letícia Lopes Ramos Torres</span><span>CRM-MG 58506</span></span>
-      <span class="go-c" aria-hidden="true"><svg class="go" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="go" d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9"/></svg></span>
+      <span class="go-c" aria-hidden="true"><svg class="go" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="go" d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9"/></svg></span><span class="grain"></span>
     </a>
   </div>
   <div class="when rv">
@@ -497,7 +509,7 @@ details[open]::details-content{block-size:auto}
 <section class="pin" id="perto" aria-labelledby="h-pin">
   <div class="pin-in">
     <img class="pin-img" src="img/perto.jpg" alt="Família sorrindo ao ar livre, a criança nos ombros do pai" loading="lazy">
-    <div class="pin-shade"></div>
+    <div class="pin-shade"></div><span class="grain"></span>
     <svg class="pin-mask" aria-hidden="true">
       <defs><mask id="pm" maskUnits="userSpaceOnUse" x="0" y="0" width="100%" height="100%"><rect width="100%" height="100%" fill="#fff"/><path id="pm-x" d="M0.2300 0.0850A0.0850 0.0850 0 0 1 0.3150 0.0000L0.6850 0.0000A0.0850 0.0850 0 0 1 0.7700 0.0850L0.7700 0.1700A0.0600 0.0600 0 0 0 0.8300 0.2300L0.9150 0.2300A0.0850 0.0850 0 0 1 1.0000 0.3150L1.0000 0.6850A0.0850 0.0850 0 0 1 0.9150 0.7700L0.8300 0.7700A0.0600 0.0600 0 0 0 0.7700 0.8300L0.7700 0.9150A0.0850 0.0850 0 0 1 0.6850 1.0000L0.3150 1.0000A0.0850 0.0850 0 0 1 0.2300 0.9150L0.2300 0.8300A0.0600 0.0600 0 0 0 0.1700 0.7700L0.0850 0.7700A0.0850 0.0850 0 0 1 0.0000 0.6850L0.0000 0.3150A0.0850 0.0850 0 0 1 0.0850 0.2300L0.1700 0.2300A0.0600 0.0600 0 0 0 0.2300 0.1700Z" fill="#000"/></mask></defs>
       <rect class="cover" width="100%" height="100%" mask="url(#pm)"/>
@@ -590,7 +602,7 @@ details[open]::details-content{block-size:auto}
   <div>
     <h2 class="h2 rv" id="h-ag">Agende sua consulta</h2>
     <p class="lead rv" style="--d:.1s">Preencha em menos de um minuto. Ao enviar, o WhatsApp da Comed abre com a mensagem pronta e a recepção responde com os horários.</p>
-    <svg class="cta-art rv" style="--d:.2s" viewBox="0 0 100 100" role="img" aria-label="Casal olhando um tablet, dentro do formato da cruz da Comed">
+    <svg class="cta-art rv" style="--d:.2s" viewBox="0 0 100 100" role="img" aria-label="Casal abraçado e sorrindo, dentro do formato da cruz da Comed">
       <defs><clipPath id="cx-ag" clipPathUnits="objectBoundingBox"><path d="M0.2300 0.0850A0.0850 0.0850 0 0 1 0.3150 0.0000L0.6850 0.0000A0.0850 0.0850 0 0 1 0.7700 0.0850L0.7700 0.1700A0.0600 0.0600 0 0 0 0.8300 0.2300L0.9150 0.2300A0.0850 0.0850 0 0 1 1.0000 0.3150L1.0000 0.6850A0.0850 0.0850 0 0 1 0.9150 0.7700L0.8300 0.7700A0.0600 0.0600 0 0 0 0.7700 0.8300L0.7700 0.9150A0.0850 0.0850 0 0 1 0.6850 1.0000L0.3150 1.0000A0.0850 0.0850 0 0 1 0.2300 0.9150L0.2300 0.8300A0.0600 0.0600 0 0 0 0.1700 0.7700L0.0850 0.7700A0.0850 0.0850 0 0 1 0.0000 0.6850L0.0000 0.3150A0.0850 0.0850 0 0 1 0.0850 0.2300L0.1700 0.2300A0.0600 0.0600 0 0 0 0.2300 0.1700Z"/></clipPath></defs>
       <path class="echo" transform="translate(8 8) scale(92)" d="M0.2300 0.0850A0.0850 0.0850 0 0 1 0.3150 0.0000L0.6850 0.0000A0.0850 0.0850 0 0 1 0.7700 0.0850L0.7700 0.1700A0.0600 0.0600 0 0 0 0.8300 0.2300L0.9150 0.2300A0.0850 0.0850 0 0 1 1.0000 0.3150L1.0000 0.6850A0.0850 0.0850 0 0 1 0.9150 0.7700L0.8300 0.7700A0.0600 0.0600 0 0 0 0.7700 0.8300L0.7700 0.9150A0.0850 0.0850 0 0 1 0.6850 1.0000L0.3150 1.0000A0.0850 0.0850 0 0 1 0.2300 0.9150L0.2300 0.8300A0.0600 0.0600 0 0 0 0.1700 0.7700L0.0850 0.7700A0.0850 0.0850 0 0 1 0.0000 0.6850L0.0000 0.3150A0.0850 0.0850 0 0 1 0.0850 0.2300L0.1700 0.2300A0.0600 0.0600 0 0 0 0.2300 0.1700Z"/>
       <g clip-path="url(#cx-ag)"><image href="img/agendar.jpg" x="0" y="0" width="92" height="92" preserveAspectRatio="xMidYMid slice"/></g>
@@ -678,13 +690,13 @@ details[open]::details-content{block-size:auto}
     fab.classList.toggle('show',hero.getBoundingClientRect().bottom<h*.5);
     if(!root.classList.contains('anim'))return;
     pars.forEach(function(img){var b=img.parentNode.getBoundingClientRect();if(b.bottom<0||b.top>h)return;var k=((b.top+b.height/2)-h/2)/h;img.style.transform='translate3d(0,'+(k*-7).toFixed(2)+'%,0)'});
-    if(pin){var r=pin.getBoundingClientRect(),tot=r.height-h,p=clamp(-r.top/(tot||1),0,1),e=ease(clamp(p/.72,0,1));
+    if(pin){var r=pin.getBoundingClientRect(),tot=r.height-h,p=clamp(-r.top/(tot||1),0,1),e=ease(clamp(p/.6,0,1));
       var W=pinIn.clientWidth,H=pinIn.clientHeight,S0=Math.min(W,H)*.46,S1=Math.max(H/.54,W)*1.08,S=S0+(S1-S0)*e;
       px.setAttribute('transform','translate('+(W/2-S/2).toFixed(1)+' '+(H/2-S/2).toFixed(1)+') scale('+S.toFixed(1)+')');
       var S2=S*1.06;echo.setAttribute('transform','translate('+(W/2-S2/2+S*.05).toFixed(1)+' '+(H/2-S2/2+S*.05).toFixed(1)+') scale('+S2.toFixed(1)+')');
-      echo.style.opacity=clamp(1-e*2.2,0,1);hint.style.opacity=clamp(1-p*5,0,1);
+      echo.style.opacity=clamp(1-e*2.2,0,1);hint.style.opacity=clamp(1-p*4,0,1);
       pimg.style.transform='scale('+(1.15-.15*e).toFixed(3)+')';
-      var c=clamp((p-.6)/.25,0,1);shade.style.opacity=c;pcopy.style.opacity=c;pcopy.style.transform='translateY('+((1-c)*40).toFixed(1)+'px)';
+      var c=clamp((p-.5)/.25,0,1);shade.style.opacity=c;pcopy.style.opacity=c;pcopy.style.transform='translateY('+((1-c)*40).toFixed(1)+'px)';
     }
   }
   window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(onScroll)}},{passive:true});
